@@ -28,11 +28,18 @@ body {
 }
 
 h1 {
-    font: normal normal normal 49px/57px var(--font-raleway);
+    font: normal normal var(--font-weight-400) 49px/57px var(--font-raleway);
     letter-spacing: 0;
     color: var(--color-black);
     opacity: 1;
     padding-bottom: 20px;
+}
+
+h2 {
+    font: normal normal var(--font-weight-400) 36px/42px var(--font-raleway);
+    letter-spacing: 0;
+    color: var(--color-black);
+    opacity: 1;
 }
 
 .container {
@@ -124,6 +131,101 @@ header .container {
     object-fit: cover;
 }
 /* END Opening section */
+
+/* Statistic section */
+.statistic-section {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+.statistic-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+.statistic-section__container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.statistic-section__container-item__number {
+    text-align: center;
+    font: normal normal var(--font-weight-800) 20px/24px var(--font-raleway);
+    letter-spacing: 0.3725em; /* 5.96px */
+    color: var(--color-black);
+    opacity: 1;
+    padding-bottom: 19px;
+    padding-top: 14px;
+}
+
+.statistic-section__container-item__description {
+    text-align: center;
+    font: normal normal var(--font-weight-400) 17px/20px var(--font-raleway);
+    letter-spacing: 0;
+    color: var(--color-grey);
+    opacity: 1;
+}
+
+.item__circle {
+    width: 63px;
+    height: 63px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.statistic-section__container-item:nth-child(1) .item__circle {
+    background-color: var(--color-redish);
+}
+
+.statistic-section__container-item:nth-child(1) .item__image {
+    top: 10px;
+    left: 50%;
+}
+
+.statistic-section__container-item:nth-child(2) .item__circle {
+    background-color: var(--color-primary);
+}
+
+.statistic-section__container-item:nth-child(2) .item__image {
+    top: 15px;
+    left: 50%;
+}
+
+.statistic-section__container-item:nth-child(3) .item__circle {
+    background-color: var(--color-green);
+}
+
+.statistic-section__container-item:nth-child(3) .item__image {
+    top: 10px;
+    left: 50%;
+}
+
+.item__image {
+    position: absolute;
+}
+/* END Statistic section */
+
+/* Benefit section */
+.benefits-section {
+    background: var(--color-light-grey) 0 0 no-repeat padding-box;
+    padding: 105px 0;
+}
+.benefits-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+/* END Benefit section */
 
 /* Shared */
 .btn {
