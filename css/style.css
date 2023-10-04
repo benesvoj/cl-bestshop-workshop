@@ -42,6 +42,13 @@ h2 {
     opacity: 1;
 }
 
+p {
+    font: normal normal var(--font-weight-400) 16px/22px var(--font-open-sans);
+    letter-spacing: 0;
+    color: var(--color-black);
+    opacity: 1;
+}
+
 .container {
     max-width: 1352px;
     height: 100%;
@@ -118,10 +125,6 @@ header .container {
 }
 
 .opening-section__title {
-    font: normal normal var(--font-weight-400) 16px/22px var(--font-open-sans);
-    letter-spacing: 0;
-    color: var(--color-black);
-    opacity: 1;
     padding-bottom: 38px;
 }
 
@@ -130,6 +133,7 @@ header .container {
     height: 100%;
     object-fit: cover;
 }
+
 /* END Opening section */
 
 /* Statistic section */
@@ -138,6 +142,7 @@ header .container {
     justify-content: center;
     padding-top: 100px;
 }
+
 .statistic-section .container {
     display: flex;
     flex-direction: column;
@@ -145,6 +150,7 @@ header .container {
     flex-wrap: nowrap;
     text-align: center;
 }
+
 .statistic-section__container {
     display: flex;
     width: 100%;
@@ -211,20 +217,67 @@ header .container {
 .item__image {
     position: absolute;
 }
+
 /* END Statistic section */
 
 /* Benefit section */
 .benefits-section {
     background: var(--color-light-grey) 0 0 no-repeat padding-box;
     padding: 105px 0;
+    display: flex;
+    justify-content: center;
 }
+.benefits-section .container {
+    flex-direction: column;
+    gap: 37px;
+}
+
 .benefits-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     flex-wrap: nowrap;
-    text-align: center;
+    background: var(--color-white) 0 0 no-repeat padding-box;
+    border-radius: 5px;
+    border: 1px solid #E8E9ED;
 }
+
+.benefits-container__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.benefits-container:nth-child(1) .benefits-container__content {
+    padding: 91px 0 91px 35px;
+}
+
+.benefits-container:nth-child(2) .benefits-container__content {
+    padding: 70px 20px 70px 0;
+}
+
+.benefits-container__content h2 {
+    padding-bottom: 30px;
+}
+
+.benefits-container__content p {
+    padding-bottom: 50px;
+}
+
+.benefits-container__content:nth-child(1) span {
+    border-bottom: 4px solid var(--color-redish);
+    width: 80%;
+}
+
+.benefits-container__content:nth-child(2) span {
+    border-bottom: 4px solid var(--color-primary);
+    width: 80%;
+}
+
+.benefits-container__image {
+    width: 386px;
+    height: auto;
+}
+
 /* END Benefit section */
 
 /* Shared */
