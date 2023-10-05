@@ -296,6 +296,7 @@ header {
     margin-right: 117px;
     margin-bottom: 38px;
 }
+
 .trumpet .benefits__image {
     position: absolute;
 }
@@ -399,6 +400,7 @@ header {
 
 .pricing-list__wrapper {
     display: flex;
+    align-items: center;
     gap: 60px;
 }
 
@@ -411,6 +413,7 @@ header {
     align-items: center;
     justify-content: space-around;
     width: 370px;
+    height: 461px;
     position: relative;
 }
 
@@ -425,7 +428,6 @@ header {
 
 .pricing-box__shadow {
     box-shadow: 5px 10px 27px var(--color-primary-shadow);
-    width: 400px;
 }
 
 .pricing-box ol {
@@ -487,6 +489,8 @@ header {
 
 .pricing-box__blue {
     --pricing-box-color: var(--color-primary);
+    width: 400px;
+    height: 500px
 }
 
 .pricing-box__green {
@@ -694,6 +698,12 @@ footer {
     border-radius: 35px;
     font-size: 13px;
     line-height: 18px;
+}
+
+.btn-x-small {
+    font-size: 13px;
+    padding: 16px 65px;
+    border-radius: 23px;
 }
 
 .btn-small {
