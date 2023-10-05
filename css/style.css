@@ -148,32 +148,31 @@ header {
 /* END Opening section */
 
 /* Statistic section */
-.statistic-section {
+.statistic {
     display: flex;
     justify-content: center;
     padding-top: 100px;
 }
 
-.statistic-section .container {
+.statistic__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
     text-align: center;
+    padding: 0 260px;
 }
 
-.statistic-section__container {
-    display: flex;
+.statistic__list {
     width: 100%;
-    align-items: center;
+    display: flex;
     flex-wrap: nowrap;
-    text-align: center;
     justify-content: space-between;
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
 }
 
-.statistic-section__container-item__number {
+.item__number {
     text-align: center;
     font-weight: var(--font-weight-800);
     font-size: 20px;
@@ -185,8 +184,7 @@ header {
     padding-top: 14px;
 }
 
-.statistic-section__container-item__description {
-    text-align: center;
+.item__description {
     font-size: 17px;
     line-height: 20px;
     font-family: var(--font-raleway);
@@ -200,29 +198,36 @@ header {
     position: relative;
 }
 
-.statistic-section__container-item:nth-child(1) .item__circle {
+.statistic__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.statistic__item:nth-child(1) .item__circle {
     background-color: var(--color-redish);
 }
 
-.statistic-section__container-item:nth-child(1) .item__image {
-    top: 10px;
+.statistic__item:nth-child(1) .item__image {
+    top: 5px;
     left: 50%;
 }
 
-.statistic-section__container-item:nth-child(2) .item__circle {
+.statistic__item:nth-child(2) .item__circle {
     background-color: var(--color-primary);
 }
 
-.statistic-section__container-item:nth-child(2) .item__image {
+.statistic__item:nth-child(2) .item__image {
     top: 15px;
-    left: 50%;
+    left: 35%;
 }
 
-.statistic-section__container-item:nth-child(3) .item__circle {
+.statistic__item:nth-child(3) .item__circle {
     background-color: var(--color-green);
 }
 
-.statistic-section__container-item:nth-child(3) .item__image {
+.statistic__item:nth-child(3) .item__image {
     top: 10px;
     left: 50%;
 }
