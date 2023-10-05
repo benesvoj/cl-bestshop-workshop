@@ -501,7 +501,7 @@ header {
 
 /* Contact */
 .contact {
-    padding: 155px 0 60px 0;
+    padding-bottom: 60px;
 }
 
 .contact__wrapper {
@@ -534,6 +534,11 @@ header {
 .contact__text--contact-info {
     display: flex;
     gap: 20px;
+}
+
+.contact__icon {
+    display: flex;
+    align-items: center;
 }
 
 .contact__icon::before {
