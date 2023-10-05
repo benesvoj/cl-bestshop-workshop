@@ -118,7 +118,7 @@ header {
 /* END Header */
 
 /* Opening section */
-.opening-section {
+.opening {
     margin-top: 130px;
     display: flex;
     flex-direction: column;
@@ -127,20 +127,22 @@ header {
     text-align: center;
 }
 
-.opening-section .container {
+.opening__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.opening-section__title {
-    padding-bottom: 38px;
+.opening__title {
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--color-black);
+    margin-bottom: 38px;
 }
 
-.opening-section img {
-    width: 100%;
+.opening img {
     height: 100%;
-    object-fit: cover;
+    width: 100%;
 }
 
 /* END Opening section */
