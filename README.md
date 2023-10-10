@@ -1,3 +1,6 @@
+![Coders-Lab-1920px-no-background](https://user-images.githubusercontent.com/30623667/104709394-2cabee80-571f-11eb-9518-ea6a794e558e.png)
+
+
 # BestShop - online shop management system
 Presentation page for a company that offers online shop management services and provides the appropriate software for this.
 
