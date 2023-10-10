@@ -22,3 +22,6 @@ This project uses practically all the things we have talked about during this mo
 - styling of forms and their non-standard elements (e.g. checkbox),
 - using pseudo-elements and pseudo-classes.
 It will be possible to use all of these elements for this project! This will certainly consolidate your knowledge.
+
+### Phase 1 - Advanced HTML and CSS 
+https://lms.coderslab.cz/material/37/1-10/0cd0ecce-fe37-43e6-9be4-4ff86dfe6482
