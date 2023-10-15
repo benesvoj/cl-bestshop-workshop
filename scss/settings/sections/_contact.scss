@@ -1,0 +1,131 @@
+@mixin contactIcon($icon) {
+  &::before {
+    background-image: url($icon);
+  }
+}
+
+.contact {
+  padding-bottom: 60px;
+
+  &__wrapper {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  &__form {
+    width: 440px;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    &__button {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__icon {
+    align-items: center;
+    display: flex;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 27px;
+      margin-right: 10px;
+      width: 27px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    &--title {
+      color: $color-black;
+      font-family: $font-raleway;
+      font-size: 49px;
+      line-height: 57px;
+      margin-bottom: 22px;
+    }
+
+    &--note {
+      color: $color-black;
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 40px;
+    }
+
+    &--contact-info {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}
+
+
+.email {
+  @include contactIcon("/assets/icons/icon-email.svg");
+}
+
+.phone {
+  @include contactIcon("/assets/icons/icon-phone.svg");
+}
+
+.contact__form__label {
+  color: $color-primary;
+  font-size: 11px;
+  font-weight: $font-weight-700;
+  letter-spacing: 0.205em; /* 3.28px */
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.checkbox input {
+  cursor: pointer;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+
+.checkbox {
+  align-items: flex-start;
+  color: $color-very-dark-gray;
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  gap: 10px;
+  line-height: 17px;
+}
+
+.checkbox span {
+  border: 1px solid $color-dark-grayish-blue;
+  border-radius: 0.25em;
+  display: inline-block;
+  flex-basis: 24px;
+  flex-shrink: 0;
+  height: 24px;
+  padding: 0;
+  width: 24px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox input[type="checkbox"] {
+  background: $color-white 0 0 no-repeat padding-box;
+}
+
+.checkbox input[type="checkbox"]:checked + span {
+  background-image: url(/assets/icons/icon-checkmark.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 12px auto;
+}

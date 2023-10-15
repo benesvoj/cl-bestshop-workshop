@@ -1,0 +1,53 @@
+@mixin btnBg($color) {
+  background: $color 0 0 no-repeat padding-box;
+}
+
+.btn {
+  border: none;
+  color: $color-white;
+  cursor: pointer;
+  font-weight: $font-weight-700;
+  text-align: center;
+  text-decoration: none;
+
+  &--blue {
+    @include btnBg($color-primary);
+  }
+
+  &--red {
+    @include btnBg($color-redish);
+  }
+
+  &--green {
+    @include btnBg($color-green);
+  }
+
+  &--shadow {
+    box-shadow: 5px 10px 14px $color-primary-shadow;
+  }
+
+  &--large {
+    border-radius: 40px;
+    font-size: 16px;
+    padding: 22px 157px;
+  }
+
+  &--medium {
+    border-radius: 35px;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 20px 100px;
+  }
+
+  &--x-small {
+    border-radius: 23px;
+    font-size: 13px;
+    padding: 16px 65px;
+  }
+
+  &--small {
+    border-radius: 23px;
+    font-size: 13px;
+    padding: 16px 57px;
+  }
+}

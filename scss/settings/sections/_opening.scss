@@ -1,0 +1,26 @@
+.opening {
+  margin-top: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: center;
+}
+
+.opening__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opening__title {
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-black;
+  margin-bottom: 38px;
+}
+
+.opening img {
+  height: 100%;
+  width: 100%;
+}
