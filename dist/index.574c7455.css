@@ -236,6 +236,22 @@ template, [hidden] {
   font-size: 13px;
 }
 
+.footer__logo, .header__logo {
+  color: #08a6e4;
+  font-family: Raleway, sans-serif;
+  font-weight: 300;
+}
+
+.header__logo {
+  font-size: 2em;
+  line-height: 1.15625em;
+}
+
+.footer__logo {
+  font-size: 1.625em;
+  line-height: 30px;
+}
+
 input {
   border: none;
   outline: none;
@@ -546,25 +562,23 @@ input[type="checkbox"] {
   background-size: 12px;
 }
 
-.opening {
-  text-align: center;
-  flex-flow: column;
-  align-items: center;
-  margin-top: 130px;
-  display: flex;
-}
-
-.opening__wrapper {
+.opening__wrapper, .opening {
   flex-direction: column;
   align-items: center;
   display: flex;
 }
 
+.opening {
+  text-align: center;
+  flex-wrap: nowrap;
+  margin-top: 8.125em;
+}
+
 .opening__title {
   color: #000;
-  margin-bottom: 38px;
-  font-size: 16px;
-  line-height: 22px;
+  margin-bottom: 2.375em;
+  font-size: 1em;
+  line-height: 1.375em;
 }
 
 .opening img {
@@ -611,6 +625,15 @@ input[type="checkbox"] {
   display: flex;
 }
 
+.pricing-box__header .limited.pricing-box__price:after {
+  content: "Limited offer";
+  color: #13253b;
+  margin-top: 20px;
+  font-family: Raleway, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .pricing-box__shadow {
   box-shadow: 5px 10px 27px #07ace629;
 }
@@ -622,18 +645,26 @@ input[type="checkbox"] {
   display: flex;
 }
 
-.pricing-box__price--item {
+.pricing-box .price-item {
   color: #000;
   font-size: 14px;
   line-height: 41px;
 }
 
-.pricing-box__price--item:before {
+.pricing-box .price-item:before {
   content: "";
   width: 11px;
   height: 11px;
   margin-right: 10px;
   display: inline-block;
+}
+
+.pricing-box .included:before {
+  background-image: url("icon-checkmark-2.50ac360d.svg");
+}
+
+.pricing-box .excluded:before {
+  background-image: url("icon-close.43886d5e.svg");
 }
 
 .pricing-box a {
@@ -673,23 +704,6 @@ input[type="checkbox"] {
 
 .pricing-box--green .pricing-box__price {
   color: #55dfb4;
-}
-
-.included:before {
-  background-image: url("icon-checkmark-2.50ac360d.svg");
-}
-
-.excluded:before {
-  background-image: url("icon-close.43886d5e.svg");
-}
-
-.limited.pricing-box__price:after {
-  content: "Limited offer";
-  color: #13253b;
-  margin-top: 20px;
-  font-family: Raleway, sans-serif;
-  font-size: 12px;
-  font-weight: 800;
 }
 
 .statistic {
@@ -778,31 +792,22 @@ input[type="checkbox"] {
   position: absolute;
 }
 
-header {
+.header {
   background: #fff no-repeat padding-box padding-box;
   align-items: center;
-  height: 70px;
+  height: 4.375em;
   display: flex;
   box-shadow: 0 3px 6px #00000029;
 }
 
-.header {
+.header__wrapper {
   justify-content: space-between;
   align-items: center;
   display: flex;
 }
 
-.header__logo {
-  color: #08a6e4;
-  font-family: Raleway, sans-serif;
-  font-size: 32px;
-  font-weight: 300;
-  line-height: 37px;
-}
-
 .header__navigation ol {
-  gap: 80px;
-  list-style: none;
+  gap: 5em;
   display: flex;
 }
 
@@ -824,46 +829,50 @@ header {
   border-bottom: .25em solid #08a6e4;
 }
 
+body h3, body h2, body h1 {
+  color: #000;
+  font-family: Raleway, sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
   background-color: #fff;
   font-family: Open Sans, sans-serif;
   font-weight: 400;
 }
 
-h1 {
-  color: #000;
+body h1 {
   padding-bottom: 20px;
-  font-family: Raleway, sans-serif;
   font-size: 49px;
   line-height: 57px;
 }
 
-h2 {
-  color: #000;
-  font-family: Raleway, sans-serif;
+body h2 {
   font-size: 36px;
   line-height: 42px;
 }
 
-h3 {
+body h3 {
   color: #13253b;
-  font-family: Raleway, sans-serif;
   font-size: 20px;
   font-weight: 800;
 }
 
-p {
+body p {
   color: #000;
   font-size: 16px;
   line-height: 22px;
 }
 
-.container {
+body .container {
   width: 1352px;
   margin: 0 auto;
 }
 
-ol, ul {
+body ol, body ul {
   list-style: none;
 }
 
@@ -880,29 +889,21 @@ ol, ul {
   display: flex;
 }
 
-.footer__logo {
-  color: #08a6e4;
-  font-family: Raleway, sans-serif;
-  font-size: 26px;
-  font-weight: 300;
-  line-height: 30px;
-}
-
-.footer__social ol {
-  gap: 20px;
-  display: flex;
-}
-
-.footer_wrapper-logo {
+.footer__wrapper__logo {
   flex-direction: column;
   gap: 7px;
   display: flex;
 }
 
-.footer_wrapper-logo p {
+.footer__wrapper__logo p {
   color: #a5a5a5;
   font-size: 11px;
   line-height: 15px;
+}
+
+.footer__social ol {
+  gap: 20px;
+  display: flex;
 }
 
 /*# sourceMappingURL=index.574c7455.css.map */

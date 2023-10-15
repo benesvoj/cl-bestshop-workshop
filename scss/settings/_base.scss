@@ -1,43 +1,50 @@
+%heading {
+  color: $color-black;
+  font-family: $font-raleway;
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
   background-color: $color-white;
   font-family: $font-open-sans;
   font-weight: $font-weight-400;
-}
 
-h1 {
-  color: $color-black;
-  font-family: $font-raleway;
-  font-size: 49px;
-  line-height: 57px;
-  padding-bottom: 20px;
-}
+  h1 {
+    @extend %heading;
+    font-size: 49px;
+    line-height: 57px;
+    padding-bottom: 20px;
+  }
 
-h2 {
-  color: $color-black;
-  font-family: $font-raleway;
-  font-size: 36px;
-  line-height: 42px;
-}
+  h2 {
+    @extend %heading;
+    font-size: 36px;
+    line-height: 42px;
+  }
 
-h3 {
-  color: $color-very-dark-blue;
-  font-family: $font-raleway;
-  font-size: 20px;
-  font-weight: $font-weight-800;
+  h3 {
+    @extend %heading;
+    color: $color-very-dark-blue;
+    font-size: 20px;
+    font-weight: $font-weight-800;
 
-}
+  }
 
-p {
-  color: $color-black;
-  font-size: 16px;
-  line-height: 22px;
-}
+  p {
+    color: $color-black;
+    font-size: 16px;
+    line-height: 22px;
+  }
 
-.container {
-  margin: 0 auto;
-  width: 1352px;
-}
+  .container {
+    margin: 0 auto;
+    width: 1352px;
+  }
 
-ol, ul {
-  list-style: none;
+  ol, ul {
+    list-style: none;
+  }
 }

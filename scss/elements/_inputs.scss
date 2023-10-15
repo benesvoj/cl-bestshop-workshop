@@ -1,19 +1,21 @@
 input {
   border: none;
   outline: none;
-}
 
-input[type="text"] {
-  border-bottom: 1px solid $color-dark-grayish-blue;
-  color: $color-very-dark-gray;
-  height: 40px;
-  padding: 5px;
+  &[type="text"] {
+    border-bottom: 1px solid $color-dark-grayish-blue;
+    color: $color-very-dark-gray;
+    height: 40px;
+    padding: 5px;
 
-  &:focus {
-    border-bottom: 1px solid $color-primary;
+    &:focus {
+      border-bottom: 1px solid $color-primary;
+    }
+
   }
-
 }
+
+
 
 .contact__form__label--name {
   margin-bottom: 40px;
