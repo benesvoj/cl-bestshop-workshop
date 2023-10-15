@@ -257,10 +257,16 @@ node_modules/
 .vscode/
 
 ### Webstorm ###
+.idea/*
 .idea/
+.idea
 
 ### Other ###
 .test/
 .solution
+dist/
 dist
+dist/*
+.parcel-cache/
+.parcel-cache/*
 .parcel-cache
