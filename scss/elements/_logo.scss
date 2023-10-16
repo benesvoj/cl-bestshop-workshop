@@ -4,6 +4,9 @@
   color: map.get($blues, "blue-500");
   font-family: $font-raleway;
   font-weight: $font-weight-light;
+  &:before {
+    content: "BestShop";
+  }
 }
 
 .header__logo {
