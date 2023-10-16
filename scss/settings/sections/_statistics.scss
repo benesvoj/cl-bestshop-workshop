@@ -13,20 +13,14 @@
   }
 
   &__list {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    @include flexBox($justify: space-between, $wrap: nowrap,);
     padding-bottom: 120px;
     padding-top: 100px;
     width: 100%;
   }
 
   &__item {
-    @include flexBox(
-            $direction: column,
-            $wrap: nowrap,
-            $align: center
-    );
+    @include flexBox($direction: column, $wrap: nowrap, $align: center);
   }
 }
 

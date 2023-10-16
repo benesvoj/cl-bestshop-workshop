@@ -1,25 +1,55 @@
 @use 'sass:map';
 
+@mixin contactIcon($icon) {
+  &::before {
+    background-image: url($icon);
+  }
+}
+
+@mixin itemIcon($icon) {
+  &::before {
+    background-image: url($icon);
+  }
+}
+
+@mixin pricingBoxTheme($color) {
+  border: 1px solid $color;
+  .pricing-box__price {
+    color: $color;
+  }
+}
+
 @mixin flexBox(
   $gap: null,
   $direction: map.get($flexDirection, row),
   $wrap: map.get($flexWrap, wrap),
   $align: null,
-  $justify: map.get($justifyContent, none)
+  $justify: map.get($justifyContent, start),
+  $autoMargin: false,
+  $grow: null,
 ) {
   display: flex;
-  margin: 0 auto;
+  @if $autoMargin {
+    margin: 0 auto;
+  }
   @if $gap != null {
     gap: $gap;
   }
   @if $direction != row {
     flex-direction: map.get($flexDirection, $direction);
+  } @else {
+    flex-direction: map.get($flexDirection, row);
   }
   flex-wrap: $wrap;
   @if $align != null {
     align-items: map.get($alignItems, $align);
   }
-  @if $justify != none {
+  @if $justify != start {
     justify-content: map.get($justifyContent, $justify);
+  } @else {
+    justify-content: map.get($justifyContent, start);
+  }
+  @if $grow != null {
+    flex-grow: $grow;
   }
 }

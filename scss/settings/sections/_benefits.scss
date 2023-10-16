@@ -8,27 +8,19 @@
 }
 
 .benefits {
+  @include flexBox($justify: center);
   background: $color-light-grey 0 0 no-repeat padding-box;
-  display: flex;
-  justify-content: center;
   padding: 100px 251px;
 
   &__wrapper {
-    @include flexBox(
-                    $gap: 2.5rem,
-                    $direction: column
-    );
+    @include flexBox($gap: 2.5rem, $direction: column);
   }
 
   &__box-one-column {
-    align-items: flex-end;
+    @include flexBox($align: end, $wrap: nowrap, $justify: between, $grow: 2);
     background: $color-white 0 0 no-repeat padding-box;
     border: 1px solid $color-light-grayish-blue;
     border-radius: 5px;
-    display: flex;
-    flex-grow: 2;
-    flex-wrap: nowrap;
-    justify-content: space-between;
     margin: 0;
   }
 
@@ -127,8 +119,7 @@
 
 
 .benefits__box-two-column {
-  display: flex;
-  gap: 3.75em;
+  @include flexBox($gap: 3.75rem);
   @include boxColorTheme($color-green);
 
   & > div {
@@ -147,11 +138,8 @@
 
 
 .single__image {
-  align-items: center;
+  @include flexBox($align: center, $justify: center, $grow: 1);
   border: none;
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
 
   img {
     height: auto;

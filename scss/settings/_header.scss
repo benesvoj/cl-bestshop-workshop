@@ -4,16 +4,12 @@
   height: 4.375em; // 70px
 
   &__wrapper {
-    @include flexBox(
-            $justify: between,
-            $wrap: nowrap,
-    );
+    @include flexBox($justify: between, $wrap: nowrap, $align: center);
   }
 
   &__navigation {
     ol {
-      display: flex;
-      gap: 5em; // 80px
+      @include flexBox($gap: 5rem);
     }
 
     &__nav-item {

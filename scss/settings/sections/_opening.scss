@@ -1,15 +1,9 @@
 .opening {
-  @include flexBox(
-          $direction: column,
-          $wrap: nowrap,
-  );
+  @include flexBox($direction: column, $wrap: nowrap);
   margin-top: 130px;
 
   &__wrapper {
-    @include flexBox(
-            $direction: column,
-            $align: center
-    );
+    @include flexBox($direction: column, $align: center);
   }
 
   &__title {

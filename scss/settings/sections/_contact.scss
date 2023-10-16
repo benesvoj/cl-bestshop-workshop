@@ -1,37 +1,25 @@
-@mixin contactIcon($icon) {
-  &::before {
-    background-image: url($icon);
-  }
-}
-
 .contact {
   padding-bottom: 60px;
 
   &__wrapper {
-    @include flexBox(
-            $gap: 6.25rem,
-            $justify: center,
-    );
+    @include flexBox($gap: 6.25rem, $justify: center,);
   }
 
   &__form {
     width: 440px;
 
     &__content {
-      display: flex;
-      flex-direction: column;
+      @include flexBox($direction: column);
       margin-bottom: 20px;
     }
 
     &__button {
-      display: flex;
-      justify-content: flex-end;
+      @include flexBox($justify: end);
     }
   }
 
   &__icon {
-    align-items: center;
-    display: flex;
+    @include flexBox($align: center);
 
     &::before {
       content: "";
@@ -43,8 +31,7 @@
   }
 
   &__text {
-    display: flex;
-    flex-direction: column;
+    @include flexBox($direction: column);
 
     &--title {
       color: $color-black;
@@ -95,12 +82,10 @@
 }
 
 .checkbox {
-  align-items: flex-start;
+  @include flexBox($align: start, $gap: 0.625rem);
   color: $color-very-dark-gray;
   cursor: pointer;
-  display: flex;
   font-size: 12px;
-  gap: 10px;
   line-height: 17px;
 }
 
