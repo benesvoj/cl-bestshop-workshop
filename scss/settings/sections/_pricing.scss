@@ -51,7 +51,7 @@
 
     .limited.pricing-box__price::after {
       content: "Limited offer";
-      font-weight: $font-weight-800;
+      font-weight: $font-weight-bolder;
       font-size: 12px;
       font-family: $font-raleway;
       color: $color-very-dark-blue;
@@ -98,7 +98,7 @@
   }
 
   &__price {
-    font-weight: $font-weight-300;
+    font-weight: $font-weight-light;
     font-size: 46px;
     display: flex;
     flex-direction: column;
