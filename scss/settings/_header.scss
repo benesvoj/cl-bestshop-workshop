@@ -4,10 +4,9 @@
   height: 4.375em; // 70px
 
   &__wrapper {
-    @include alignmentWrapper(
+    @include flexBox(
             $justify: between,
-            $flexWrap: nowrap,
-            $alignItems: center
+            $wrap: nowrap,
     );
   }
 

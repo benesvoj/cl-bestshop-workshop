@@ -4,7 +4,10 @@
   padding-top: 100px;
 
   &__wrapper {
-    @include alignmentWrapper(null, column, nowrap);
+    @include flexBox(
+            $direction: column,
+            $wrap: nowrap,
+    );
     padding: 0 260px;
     text-align: center;
   }
@@ -19,7 +22,11 @@
   }
 
   &__item {
-    @include alignmentWrapper($gap: null, $direction: column, $flexWrap: nowrap, $alignItems: center);
+    @include flexBox(
+            $direction: column,
+            $wrap: nowrap,
+            $align: center
+    );
   }
 }
 

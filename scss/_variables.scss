@@ -4,3 +4,33 @@ $font-weight-bold: 700;
 $font-weight-bolder: 800;
 
 $font-weight-base: $font-weight-normal !default;
+
+
+$flexDirection: (
+        row: row,
+        column: column
+);
+
+$justifyContent: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        between: space-between,
+        around: space-around,
+        evenly: space-evenly,
+        none: none
+);
+
+$flexWrap: (
+        wrap: wrap,
+        nowrap: nowrap
+);
+
+$alignItems: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch,
+        none: none
+);

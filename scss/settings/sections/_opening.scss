@@ -1,10 +1,15 @@
 .opening {
-  @include columnAlign;
+  @include flexBox(
+          $direction: column,
+          $wrap: nowrap,
+  );
   margin-top: 130px;
 
   &__wrapper {
-    @include alignmentWrapper(null, column);
-    align-items: center;
+    @include flexBox(
+            $direction: column,
+            $align: center
+    );
   }
 
   &__title {

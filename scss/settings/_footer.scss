@@ -4,9 +4,10 @@
   height: 89px;
 
   &__wrapper {
-    @include alignmentWrapper();
-    align-items: center;
-    justify-content: space-between;
+    @include flexBox(
+            $justify: between,
+            $align: center
+    );
     padding: 20px 0 17px 0;
 
     &__logo {

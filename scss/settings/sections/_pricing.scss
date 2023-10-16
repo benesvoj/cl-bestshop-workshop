@@ -12,46 +12,49 @@
 }
 
 .pricing {
-  padding: 100px 0 155px 0;
   background: $color-white 0 0 no-repeat padding-box;
+  padding: 100px 0 155px 0;
 
   &__wrapper {
-    @include alignmentWrapper(2.5rem, column, nowrap);
-    align-items: center;
+    @include flexBox(
+            $gap: 2.5rem,
+            $direction: column,
+            $wrap: nowrap
+    );
   }
 }
 
 .pricing-list {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 60px;
 }
 
 .pricing-box {
+  align-items: center;
   background: $color-white 0 0 no-repeat padding-box;
   border-radius: 18px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 370px;
   height: 461px;
+  justify-content: space-around;
   position: relative;
+  width: 370px;
 
   &__header {
-    margin-top: 30px;
-    margin-bottom: 60px;
-    text-align: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 60px;
+    margin-top: 30px;
+    text-align: center;
 
     .limited.pricing-box__price::after {
-      content: "Limited offer";
-      font-weight: $font-weight-bolder;
-      font-size: 12px;
-      font-family: $font-raleway;
       color: $color-very-dark-blue;
+      content: "Limited offer";
+      font-family: $font-raleway;
+      font-size: 12px;
+      font-weight: $font-weight-bolder;
       margin-top: 20px;
     }
   }
@@ -61,23 +64,23 @@
   }
 
   ol {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-bottom: 25px;
   }
 
   .price-item {
+    color: $color-black;
     font-size: 14px;
     line-height: 41px;
-    color: $color-black;
 
     &::before {
       content: "";
       display: inline-block;
-      width: 11px;
       height: 11px;
       margin-right: 10px;
+      width: 11px;
     }
   }
 
@@ -90,16 +93,16 @@
   }
 
   a {
-    position: absolute;
     bottom: -22px;
+    position: absolute;
   }
 
   &__price {
-    font-weight: $font-weight-light;
-    font-size: 46px;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    font-size: 46px;
+    font-weight: $font-weight-light;
   }
 
   &--red {
@@ -108,8 +111,8 @@
 
   &--blue {
     @include pricingBoxTheme($color-primary);
+    height: 500px;
     width: 400px;
-    height: 500px
   }
 
   &--green {

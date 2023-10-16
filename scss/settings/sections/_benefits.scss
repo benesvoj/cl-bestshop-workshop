@@ -14,7 +14,10 @@
   padding: 100px 251px;
 
   &__wrapper {
-    @include alignmentWrapper(2.5rem, column);
+    @include flexBox(
+                    $gap: 2.5rem,
+                    $direction: column
+    );
   }
 
   &__box-one-column {
