@@ -1,17 +1,10 @@
-%alignment {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
 .opening {
-  @extend %alignment;
-  flex-wrap: nowrap;
-  margin-top: 8.125em; // 130px
-  text-align: center;
+  @include columnAlign;
+  margin-top: 130px;
 
   &__wrapper {
-    @extend %alignment;
+    @include alignmentWrapper(null, column);
+    align-items: center;
   }
 
   &__title {

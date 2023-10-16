@@ -4,10 +4,7 @@
   padding-top: 100px;
 
   &__wrapper {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    @include alignmentWrapper(null, column, nowrap);
     padding: 0 260px;
     text-align: center;
   }
@@ -22,10 +19,7 @@
   }
 
   &__item {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    @include alignmentWrapper($gap: null, $direction: column, $flexWrap: nowrap, $alignItems: center);
   }
 }
 

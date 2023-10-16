@@ -2,6 +2,15 @@
   background: $color 0 0 no-repeat padding-box;
 }
 
+@mixin buttonProps($radius, $fontSize, $paddingX, $paddingY, $lineHeight: null) {
+  border-radius: $radius;
+  font-size: $fontSize;
+  padding: $paddingX $paddingY;
+  @if $lineHeight != null {
+    line-height: $lineHeight;
+  }
+}
+
 .btn {
   border: none;
   color: $color-white;
@@ -23,31 +32,22 @@
   }
 
   &--shadow {
-    box-shadow: 5px 10px 14px $color-primary-shadow;
+    box-shadow: 0.3125rem 0.625rem 0.875rem $color-primary-shadow;
   }
 
   &--large {
-    border-radius: 40px;
-    font-size: 16px;
-    padding: 22px 157px;
+    @include buttonProps(2.5rem, 1rem, 1.375rem, 9.8125rem);
   }
 
   &--medium {
-    border-radius: 35px;
-    font-size: 13px;
-    line-height: 18px;
-    padding: 20px 100px;
+    @include buttonProps(2.1875rem, 0.8125rem, 1.25rem, 6.25rem, 1.125rem);
   }
 
   &--x-small {
-    border-radius: 23px;
-    font-size: 13px;
-    padding: 16px 65px;
+    @include buttonProps(1.4375rem, 0.8125rem, 1rem, 4.0625rem);
   }
 
   &--small {
-    border-radius: 23px;
-    font-size: 13px;
-    padding: 16px 57px;
+    @include buttonProps(1.4375rem, 0.8125rem, 1rem, 3.5625rem);
   }
 }

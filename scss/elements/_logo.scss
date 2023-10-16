@@ -12,7 +12,7 @@
 .header__logo {
   @extend %logo;
   font-size: 2em;
-  line-height: 1.15625em; // 37px 2.3125em
+  line-height: 1.125em; // 37px 2.3125em, 1.125em = 36px
 }
 
 .footer__logo {

@@ -14,9 +14,7 @@
   padding: 100px 251px;
 
   &__wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5em;
+    @include alignmentWrapper(2.5rem, column);
   }
 
   &__box-one-column {

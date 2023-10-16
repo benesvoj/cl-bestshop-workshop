@@ -16,11 +16,8 @@
   background: $color-white 0 0 no-repeat padding-box;
 
   &__wrapper {
-    display: flex;
-    flex-direction: column;
+    @include alignmentWrapper(2.5rem, column, nowrap);
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 40px;
   }
 }
 

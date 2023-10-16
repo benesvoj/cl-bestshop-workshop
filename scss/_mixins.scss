@@ -1,0 +1,60 @@
+@use 'sass:map';
+
+$direction: (
+        row: row,
+        column: column
+);
+
+$justifyContent: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        between: space-between,
+        around: space-around,
+        evenly: space-evenly,
+        none: none
+);
+
+$flexWrap: (
+        wrap: wrap,
+        nowrap: nowrap
+);
+
+$alignItems: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch,
+        none: none
+);
+
+@mixin columnAlign() {
+  display: flex;
+  flex-direction: map.get($direction, column);
+}
+
+@mixin alignmentWrapper(
+  $gap: null,
+  $direction: map.get($direction, row),
+  $flexWrap: map.get($flexWrap, wrap),
+  $alignItems: map.get($alignItems, none),
+  $justify: map.get($justifyContent, none)
+) {
+  margin: 0 auto;
+  @if $gap != null {
+    gap: $gap;
+  }
+  @if $direction != row {
+    @include columnAlign;
+  } @else {
+    display: flex;
+  }
+  flex-wrap: $flexWrap;
+  @if $alignItems != null {
+    align-items: $alignItems;
+  }
+  @if $justify != none {
+    justify-content: map.get($justifyContent, $justify);
+  }
+}
