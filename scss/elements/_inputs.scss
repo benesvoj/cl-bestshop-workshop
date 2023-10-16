@@ -1,15 +1,17 @@
+@use 'sass:map';
+
 input {
   border: none;
   outline: none;
 
   &[type="text"] {
-    border-bottom: 1px solid $color-dark-grayish-blue;
-    color: $color-very-dark-gray;
+    border-bottom: 1px solid map.get($colors, dark-grayish-blue);
+    color: map.get($colors, very-dark-gray);
     height: 40px;
     padding: 5px;
 
     &:focus {
-      border-bottom: 1px solid $color-primary;
+      border-bottom: 1px solid map.get($colors, primary);
     }
 
   }

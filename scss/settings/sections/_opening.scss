@@ -1,6 +1,6 @@
 .opening {
   @include flexBox($direction: column, $wrap: nowrap);
-  @include section($pt: 8.125em);
+  margin-top: 8.125em;
 
   &__wrapper {
     @include flexBox($direction: column, $align: center);
