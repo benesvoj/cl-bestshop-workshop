@@ -5,6 +5,14 @@ $font-weight-bolder: 800;
 
 $font-weight-base: $font-weight-normal !default;
 
+$fontWeights: (
+        light: $font-weight-light,
+        normal: $font-weight-normal,
+        bold: $font-weight-bold,
+        bolder: $font-weight-bolder,
+        base: $font-weight-base
+);
+
 
 $flexDirection: (
         row: row,

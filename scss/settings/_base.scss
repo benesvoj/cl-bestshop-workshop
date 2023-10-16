@@ -1,47 +1,38 @@
-%heading {
-  color: $color-black;
-  font-family: $font-raleway;
-}
+@use 'sass:map';
 
 html {
   font-size: 16px;
 }
 
 body {
-  background-color: $color-white;
-  font-family: $font-open-sans;
-  font-weight: $font-weight-base;
+  @include font($family: open-sans);
+  background-color: map.get($colors, white);
 
   h1 {
-    @extend %heading;
-    font-size: 49px;
-    line-height: 57px;
-    padding-bottom: 20px;
+    @include font($family: raleway, $size: 3.0625em, $lineHeight: 3.5625rem);
+    padding-bottom: 1.25rem;
   }
 
   h2 {
-    @extend %heading;
-    font-size: 36px;
-    line-height: 42px;
+    @include font($family: raleway, $size: 2.25em, $lineHeight: 2.625rem);
   }
 
   h3 {
-    @extend %heading;
-    color: $color-very-dark-blue;
-    font-size: 20px;
-    font-weight: $font-weight-bolder;
-
+    @include font(
+            $family: raleway,
+            $size: 1.25em,
+            $weight: bolder,
+            $color: very-dark-blue
+    );
   }
 
   p {
-    color: $color-black;
-    font-size: 16px;
-    line-height: 22px;
+    @include font($size: 1em, $lineHeight: 1.375em);
   }
 
   .container {
     margin: 0 auto;
-    width: 1352px;
+    width: 84.5rem;
   }
 
   ol, ul {

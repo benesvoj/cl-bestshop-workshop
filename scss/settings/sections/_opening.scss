@@ -1,16 +1,14 @@
 .opening {
   @include flexBox($direction: column, $wrap: nowrap);
-  margin-top: 130px;
+  @include section($pt: 8.125em);
 
   &__wrapper {
     @include flexBox($direction: column, $align: center);
   }
 
   &__title {
-    color: $color-black;
-    font-size: 1em;
-    line-height: 1.375em; // 22px
-    margin-bottom: 2.375em; // 38px
+    @include font($size: 1em, $lineHeight: 1.375em);
+    margin-bottom: 2.375em;
   }
 
   img {

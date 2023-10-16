@@ -1,32 +1,27 @@
+@use 'sass:map';
+
 .footer {
-  background: $color-light-grey 0 0 no-repeat padding-box;
-  box-shadow: 0 -5px 40px $color-secondary-shadow;
+  background: map.get($colors, light-grey) 0 0 no-repeat padding-box;
+  box-shadow: 0 -5px 40px map.get($colors, secondary-shadow);
   height: 89px;
 
   &__wrapper {
-    @include flexBox(
-            $justify: between,
-            $align: center
-    );
+    @include flexBox($justify: between, $align: center);
     padding: 20px 0 17px 0;
 
     &__logo {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
+      @include flexBox($gap: 0.4375rem, $direction: column,);
 
       p {
-        color: $color-grey;
-        font-size: 11px;
-        line-height: 15px;
+        @include font($color: grey, $size: 0.75em, $lineHeight: 1.25em);
+      }
+    }
+
+    &__social {
+      ol {
+        @include flexBox($gap: 1.25rem);
       }
     }
   }
 
-  &__social {
-    ol {
-      display: flex;
-      gap: 20px;
-    }
-  }
 }

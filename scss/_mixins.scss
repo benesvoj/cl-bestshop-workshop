@@ -13,9 +13,31 @@
 }
 
 @mixin pricingBoxTheme($color) {
-  border: 1px solid $color;
+  border: 1px solid map.get($colors, $color);
   .pricing-box__price {
-    color: $color;
+    color: map.get($colors, $color);
+  }
+}
+
+@mixin boxColorTheme($color) {
+  .benefits__image::before, .benefits__text::after {
+    background-color: map.get($colors, $color);
+  }
+  .single-image {
+    background-color: map.get($colors, $color);
+  }
+}
+
+@mixin btnBg($color) {
+  background: map.get($colors, $color) 0 0 no-repeat padding-box;
+}
+
+@mixin buttonProps($radius, $fontSize, $paddingX, $paddingY, $lineHeight: null) {
+  border-radius: $radius;
+  font-size: $fontSize;
+  padding: $paddingX $paddingY;
+  @if $lineHeight != null {
+    line-height: $lineHeight;
   }
 }
 
@@ -53,3 +75,53 @@
     flex-grow: $grow;
   }
 }
+
+@mixin font(
+  $family: map.get($fonts, open-sans),
+  $color: map.get($colors, black),
+  $size: null,
+  $weight: map.get($fontWeights, base),
+  $lineHeight: null,
+  $spacing: null,
+  $transform: null,
+  $align: null
+) {
+  font-family: map.get($fonts, $family);
+  color: map.get($colors, $color);
+  @if $size != null {
+    font-size: $size;
+  }
+  font-weight: map.get($fontWeights, $weight);
+  @if $lineHeight != null {
+    line-height: $lineHeight;
+  }
+  @if ($spacing != null) {
+    letter-spacing: $spacing;
+  }
+  @if $align != null {
+    text-align: $align;
+  }
+  text-decoration: none;
+  @if $transform != null {
+    text-transform: $transform;
+  }
+}
+
+@mixin section(
+  $color: map.get($colors, white),
+  $paddingY: 0,
+  $paddingX: 0,
+  $pt: 0,
+  $pr: 0,
+  $pb: 0,
+  $pl: 0
+) {
+  background: map.get($colors, $color) 0 0 no-repeat padding-box;
+  @if ($paddingX != 0 and $paddingY != 0) {
+    padding: $paddingY $paddingX;
+  } @else {
+    padding: $pt $pr $pb $pl;
+  }
+}
+
+;

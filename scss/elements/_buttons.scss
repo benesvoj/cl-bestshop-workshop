@@ -1,38 +1,24 @@
-@mixin btnBg($color) {
-  background: $color 0 0 no-repeat padding-box;
-}
-
-@mixin buttonProps($radius, $fontSize, $paddingX, $paddingY, $lineHeight: null) {
-  border-radius: $radius;
-  font-size: $fontSize;
-  padding: $paddingX $paddingY;
-  @if $lineHeight != null {
-    line-height: $lineHeight;
-  }
-}
+@use 'sass:map';
 
 .btn {
+  @include font($color: white, $weight: bold);
   border: none;
-  color: $color-white;
   cursor: pointer;
-  font-weight: $font-weight-bold;
-  text-align: center;
-  text-decoration: none;
 
   &--blue {
-    @include btnBg($color-primary);
+    @include btnBg(primary);
   }
 
   &--red {
-    @include btnBg($color-redish);
+    @include btnBg(redish);
   }
 
   &--green {
-    @include btnBg($color-green);
+    @include btnBg(green);
   }
 
   &--shadow {
-    box-shadow: 0.3125rem 0.625rem 0.875rem $color-primary-shadow;
+    box-shadow: 0.3125rem 0.625rem 0.875rem map.get($colors, primary-shadow);
   }
 
   &--large {

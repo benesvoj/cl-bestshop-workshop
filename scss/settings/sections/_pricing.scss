@@ -1,75 +1,57 @@
+@use 'sass:map';
+
 .pricing {
-  background: $color-white 0 0 no-repeat padding-box;
-  padding: 100px 0 155px 0;
+  @include section($pt: 6.25em, $pb: 5.625em);
 
   &__wrapper {
-    @include flexBox(
-            $gap: 2.5rem,
-            $direction: column,
-            $wrap: nowrap,
-            $align: center
-    );
+    @include flexBox($gap: 2.5rem, $direction: column, $wrap: nowrap, $align: center);
   }
 }
 
 .pricing-list {
-  @include flexBox(
-          $gap: 3.75rem,
-          $align: center,
-  );
+  @include flexBox($gap: 3.75rem, $align: center,);
 }
 
 .pricing-box {
-  @include flexBox(
-          $direction: column,
-          $align: center,
-          $justify: around
-  );
-  background: $color-white 0 0 no-repeat padding-box;
-  border-radius: 18px;
-  height: 461px;
+  @include flexBox($direction: column, $align: center, $justify: around, $wrap: nowrap);
+  border-radius: 1.125em;
   position: relative;
-  width: 370px;
 
   &__header {
-    @include flexBox(
-            $direction: column,
-            $gap: 1.25rem,
-    );
-    margin-bottom: 60px;
-    margin-top: 30px;
+    @include flexBox($direction: column, $gap: 1.25rem,);
+    margin-bottom: 3.75em;
     text-align: center;
 
     .limited.pricing-box__price::after {
-      color: $color-very-dark-blue;
+      @include font(
+              $color: very-dark-blue,
+              $family: raleway,
+              $size: 0.75rem,
+              $weight: bolder
+      );
       content: "Limited offer";
-      font-family: $font-raleway;
-      font-size: 12px;
-      font-weight: $font-weight-bolder;
-      margin-top: 20px;
+      margin-top: 1.25rem;
     }
   }
 
   &__shadow {
-    box-shadow: 5px 10px 27px $color-primary-shadow;
+    box-shadow: 0.3125em 0.625em 1.6875em map.get($colors, primary-shadow);
   }
 
   ol {
     @include flexBox($direction: column, $align: center);
-    margin-bottom: 25px;
   }
 
   .price-item {
-    color: $color-black;
-    font-size: 14px;
-    line-height: 41px;
+    @include font($size: 0.875em, $lineHeight: 2.5625rem);
 
     &::before {
+      $size: 0.6875rem;
       content: "";
       display: inline-block;
-      height: 11px;
-      margin-right: 10px;
-      width: 11px;
+      height: $size;
+      margin-right: 0.625rem;
+      width: $size;
     }
   }
 
@@ -82,27 +64,29 @@
   }
 
   a {
-    bottom: -22px;
+    bottom: -1.375rem;
     position: absolute;
   }
 
   &__price {
     @include flexBox($direction: column, $align: center);
-    font-size: 46px;
-    font-weight: $font-weight-light;
+    @include font($size: 2.875em, $weight: light);
+  }
+
+  &--red, &--green {
+    padding: 1.875rem 7rem 3.75rem 7rem;
   }
 
   &--red {
-    @include pricingBoxTheme($color-redish);
+    @include pricingBoxTheme(redish);
   }
 
   &--blue {
-    @include pricingBoxTheme($color-primary);
-    height: 500px;
-    width: 400px;
+    @include pricingBoxTheme(primary);
+    padding: 1.875rem 7.5rem 5rem 7.5rem;
   }
 
   &--green {
-    @include pricingBoxTheme($color-green);
+    @include pricingBoxTheme(green);
   }
 }

@@ -1,12 +1,14 @@
+@use 'sass:map';
+
 .contact {
-  padding-bottom: 60px;
+  @include section($pt: 5.625em, $pb: 3.75em);
 
   &__wrapper {
     @include flexBox($gap: 6.25rem, $justify: center,);
   }
 
   &__form {
-    width: 440px;
+    width: 27.5rem;
 
     &__content {
       @include flexBox($direction: column);
@@ -22,35 +24,30 @@
     @include flexBox($align: center);
 
     &::before {
+      $size: 1.6875rem;
       content: "";
       display: inline-block;
-      height: 27px;
-      margin-right: 10px;
-      width: 27px;
+      height: $size;
+      margin-right: 0.625rem;
+      width: $size;
     }
   }
 
   &__text {
     @include flexBox($direction: column);
 
-    &--title {
-      color: $color-black;
-      font-family: $font-raleway;
-      font-size: 49px;
-      line-height: 57px;
-      margin-bottom: 22px;
+    &__title {
+      @include font($family: raleway, $size: 3.0625em, $lineHeight: 3.5625rem);
+      margin-bottom: 1.375rem;
     }
 
-    &--note {
-      color: $color-black;
-      font-size: 16px;
-      line-height: 22px;
-      margin-bottom: 40px;
+    &__note {
+      @include font($size: 1em, $lineHeight: 1.375em);
+      margin-bottom: 2.5em;
     }
 
-    &--contact-info {
-      display: flex;
-      gap: 20px;
+    &__contact-info {
+      @include flexBox($gap: 1.25rem);
     }
   }
 }
@@ -65,52 +62,54 @@
 }
 
 .contact__form__label {
-  color: $color-primary;
-  font-size: 11px;
-  font-weight: $font-weight-bold;
-  letter-spacing: 0.205em; /* 3.28px */
-  line-height: 15px;
-  text-transform: uppercase;
-}
-
-.checkbox input {
-  cursor: pointer;
-  height: 0;
-  opacity: 0;
-  position: absolute;
-  width: 0;
+  @include font(
+          $color: primary,
+          $size: 0.6875em,
+          $weight: bold,
+          $spacing: 0.205rem,
+          $lineHeight: 0.9375rem,
+          $transform: uppercase,
+  )
 }
 
 .checkbox {
-  @include flexBox($align: start, $gap: 0.625rem);
-  color: $color-very-dark-gray;
+  @include flexBox($align: start, $gap: 0.625rem, $wrap: nowrap);
+  @include font($size: 0.75em, $lineHeight: 1.0625rem, $color: very-dark-gray);
   cursor: pointer;
-  font-size: 12px;
-  line-height: 17px;
+
+  input {
+    cursor: pointer;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    width: 0;
+  }
+
+  span {
+    $size: 2em;
+    border: 0.0625rem solid map.get($colors, dark-grayish-blue);
+    border-radius: 0.25rem;
+    display: inline-block;
+    flex-basis: $size;
+    flex-shrink: 0;
+    height: $size;
+    padding: 0;
+    width: $size;
+  }
+
+  input[type="checkbox"] {
+    background: map.get($colors, white) 0 0 no-repeat padding-box;
+  }
+
+  input[type="checkbox"]:checked + span {
+    background-image: url(/assets/icons/icon-checkmark.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0.75em auto;
+  }
 }
 
-.checkbox span {
-  border: 1px solid $color-dark-grayish-blue;
-  border-radius: 0.25em;
-  display: inline-block;
-  flex-basis: 24px;
-  flex-shrink: 0;
-  height: 24px;
-  padding: 0;
-  width: 24px;
-}
 
 input[type="checkbox"] {
   display: none;
-}
-
-.checkbox input[type="checkbox"] {
-  background: $color-white 0 0 no-repeat padding-box;
-}
-
-.checkbox input[type="checkbox"]:checked + span {
-  background-image: url(/assets/icons/icon-checkmark.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 12px auto;
 }

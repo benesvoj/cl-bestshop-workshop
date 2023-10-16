@@ -1,9 +1,5 @@
-@use 'sass:map';
-
 %logo {
-  color: map.get($blues, "blue-500");
-  font-family: $font-raleway;
-  font-weight: $font-weight-light;
+  @include font($color: primary, $weight: light, $family: raleway);
   &:before {
     content: "BestShop";
   }

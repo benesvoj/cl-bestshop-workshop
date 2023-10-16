@@ -1,7 +1,9 @@
+@use 'sass:map';
+
 .header {
-  box-shadow: 0 3px 6px $color-secondary-shadow;
+  box-shadow: 0 0.1875em 0.375em map.get($colors, secondary-shadow);
   display: flex;
-  height: 4.375em; // 70px
+  height: 4.375em;
 
   &__wrapper {
     @include flexBox($justify: between, $wrap: nowrap, $align: center);
@@ -13,20 +15,20 @@
     }
 
     &__nav-item {
-      border-bottom: 0.25em solid transparent;
-      color: $color-grey;
-      font-size: 11px;
-      font-weight: $font-weight-bold;
-      letter-spacing: 0.205em;
-      line-height: 15px;
-      padding: 25px 12px;
-      text-align: center;
-      text-decoration: none;
-      text-transform: uppercase;
+      @include font(
+              $color: grey,
+              $size: 0.75em,
+              $weight: bold,
+              $spacing: 0.273333em,
+              $lineHeight: 1.25em,
+              $transform: uppercase
+      );
+      border-bottom: 0.25rem solid transparent;
+      padding: 1.5625rem 1em;
 
       &:hover {
-        border-bottom: 0.25em solid $color-primary;
-        color: $color-black;
+        border-bottom: 0.25em solid map.get($colors, primary);
+        color: map.get($colors, black);
       }
     }
   }

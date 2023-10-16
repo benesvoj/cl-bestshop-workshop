@@ -1,19 +1,15 @@
 .statistic {
-  display: flex;
-  justify-content: center;
+  @include flexBox($justify: center);
   padding-top: 100px;
 
   &__wrapper {
-    @include flexBox(
-            $direction: column,
-            $wrap: nowrap,
-    );
+    @include flexBox($direction: column, $wrap: nowrap,);
     padding: 0 260px;
     text-align: center;
   }
 
   &__list {
-    @include flexBox($justify: space-between, $wrap: nowrap,);
+    @include flexBox($justify: between, $wrap: nowrap,);
     padding-bottom: 120px;
     padding-top: 100px;
     width: 100%;
@@ -25,7 +21,6 @@
 }
 
 .item__number {
-  color: $color-black;
   font-family: $font-raleway;
   font-size: 20px;
   font-weight: $font-weight-bolder;
