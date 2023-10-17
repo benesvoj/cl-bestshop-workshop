@@ -1,6 +1,8 @@
+@use 'sass:list';
+
 .statistic {
   @include flexBox($justify: center);
-  padding-top: 100px;
+  @include section($pt: 100px);
 
   &__wrapper {
     @include flexBox($direction: column, $wrap: nowrap,);
@@ -17,62 +19,53 @@
 
   &__item {
     @include flexBox($direction: column, $wrap: nowrap, $align: center);
+
+    @for $i from 1 through length($colorsPalette) {
+      &:nth-child(#{$i}) &__circle {
+        background-color: nth($colorsPalette, $i);
+      }
+    }
+
+    &__number {
+      @include font($family: raleway, $size: 20px, $weight: bolder, $spacing: 0.3725em, $lineHeight: 24px, $align: center);
+      padding-bottom: 19px;
+      padding-top: 14px;
+    }
+
+    &_description {
+      @include font($color: grey, $family: raleway, $size: 17px, $lineHeight: 20px);
+    }
+
+    &__circle {
+      $size: 63px;
+      border-radius: 50%;
+      height: $size;
+      position: relative;
+      width: $size;
+    }
+
+    &:nth-child(1) &__image {
+      left: 50%;
+      top: 5px;
+    }
+
+    &:nth-child(2) &__image {
+      left: 35%;
+      top: 15px;
+    }
+
+    &:nth-child(3) &__image {
+      left: 50%;
+      top: 10px;
+    }
+
+    &__image {
+      position: absolute;
+    }
   }
 }
 
-.item__number {
-  font-family: $font-raleway;
-  font-size: 20px;
-  font-weight: $font-weight-bolder;
-  letter-spacing: 0.3725em; /* 5.96px */
-  line-height: 24px;
-  padding-bottom: 19px;
-  padding-top: 14px;
-  text-align: center;
-}
-
-.item__description {
-  color: $color-grey;
-  font-family: $font-raleway;
-  font-size: 17px;
-  line-height: 20px;
-}
-
-.item__circle {
-  border-radius: 50%;
-  height: 63px;
-  position: relative;
-  width: 63px;
-}
 
 
-.statistic__item:nth-child(1) .item__circle {
-  background-color: $color-redish;
-}
 
-.statistic__item:nth-child(1) .item__image {
-  left: 50%;
-  top: 5px;
-}
 
-.statistic__item:nth-child(2) .item__circle {
-  background-color: $color-primary;
-}
-
-.statistic__item:nth-child(2) .item__image {
-  left: 35%;
-  top: 15px;
-}
-
-.statistic__item:nth-child(3) .item__circle {
-  background-color: $color-green;
-}
-
-.statistic__item:nth-child(3) .item__image {
-  left: 50%;
-  top: 10px;
-}
-
-.item__image {
-  position: absolute;
-}

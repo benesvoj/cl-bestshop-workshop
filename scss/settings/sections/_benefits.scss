@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:list';
 
 .benefits {
   @include flexBox($justify: center);
@@ -6,6 +7,90 @@
 
   &__wrapper {
     @include flexBox($gap: 2.5rem, $direction: column);
+
+    @for $i from 1 through length($colorsPalette) {
+      &__box:nth-child(#{$i}) {
+        .benefits__image::before,
+        .benefits__text::after {
+          background-color: nth($colorsPalette, $i);
+        }
+
+        // trumpet section
+        @if $i == 3 {
+          @include flexBox($gap: 3.75rem);
+
+          & > div {
+            margin-bottom: 0;
+            //max-width: 620px;
+          }
+
+          // first column
+          & > div:nth-child(1) {
+            //max-width: 620px;
+
+            .benefits__text {
+              margin: 70px 35px;
+            }
+          }
+        }
+      }
+
+      // macbook section
+      @if $i == 1 {
+        &__box:nth-child(#{$i}) {
+          .benefits__image {
+            margin-bottom: 38px;
+            margin-right: 117px;
+
+            img {
+              height: auto;
+              width: 386px;
+            }
+
+            &::before {
+              @include bgImage($size: 180px, $radius: 40px, $top: -40px, $right: 0, $rotate: 45);
+            }
+          }
+        }
+      }
+
+      //iphone section
+      @if $i == 2 {
+        &__box:nth-child(#{$i}) {
+          flex-direction: row-reverse;
+
+          .benefits__text {
+            margin: 70px 20px 70px 0;
+          }
+
+          .benefits__image {
+            margin-bottom: 20px;
+            margin-left: 50px;
+
+            img {
+              height: auto;
+              width: 426px;
+            }
+
+            &::before {
+              @include bgImage($size: 320px, $radius: 50%, $left: -20px, $top: 0);
+            }
+          }
+        }
+      }
+
+      .single-image {
+        background-color: nth($colorsPalette, $i);
+        @include flexBox($align: center, $justify: center, $grow: 1);
+        border: none;
+
+        img {
+          height: auto;
+          margin-top: 55px;
+          width: 295px;
+        }
+      }
+    }
   }
 
   &__box-one-column {
@@ -26,7 +111,6 @@
     }
 
     &::after {
-      background-color: map.get($colors, redish);
       content: "";
       display: block;
       height: 0.25em;
@@ -40,101 +124,6 @@
 
     img {
       position: relative;
-      z-index: 2;
     }
-  }
-}
-
-
-.trumpet .benefits__image {
-  position: absolute;
-}
-
-.iphone {
-  @include boxColorTheme(primary);
-  flex-direction: row-reverse;
-
-  .benefits__text {
-    margin: 70px 20px 70px 0;
-  }
-
-  .benefits__image {
-    bottom: 20px;
-    left: 50px;
-
-    img {
-      height: auto;
-      width: 426px;
-    }
-
-    &::before {
-      border-radius: 50%;
-      content: "";
-      display: block;
-      height: 320px;
-      left: -20px;
-      position: absolute;
-      top: 0;
-      width: 320px;
-    }
-  }
-}
-
-.macbook {
-  @include boxColorTheme(redish);
-
-  .benefits__image {
-    margin-bottom: 38px;
-    margin-right: 117px;
-
-    img {
-      height: auto;
-      position: relative;
-      width: 386px;
-      z-index: 2;
-    }
-
-    &::before {
-      border-radius: 40px;
-      content: "";
-      display: block;
-      height: 180px;
-      position: absolute;
-      right: 0;
-      top: -40px;
-      transform: rotate(45deg);
-      width: 180px;
-    }
-  }
-}
-
-
-.benefits__box-two-column {
-  @include flexBox($gap: 3.75rem);
-  @include boxColorTheme(green);
-
-  & > div {
-    margin-bottom: 0;
-  }
-}
-
-.benefits__box-one-column_text {
-  max-width: 620px;
-
-  .benefits__text {
-    margin: 70px 35px;
-    max-width: none;
-  }
-}
-
-
-.single-image {
-  @include flexBox($align: center, $justify: center, $grow: 1);
-  border: none;
-
-  img {
-    height: auto;
-    margin-top: 55px;
-    width: 295px;
   }
 }

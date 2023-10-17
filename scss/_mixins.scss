@@ -12,22 +12,6 @@
   }
 }
 
-@mixin pricingBoxTheme($color) {
-  border: 1px solid map.get($colors, $color);
-  .pricing-box__price {
-    color: map.get($colors, $color);
-  }
-}
-
-@mixin boxColorTheme($color) {
-  .benefits__image::before, .benefits__text::after {
-    background-color: map.get($colors, $color);
-  }
-  .single-image {
-    background-color: map.get($colors, $color);
-  }
-}
-
 @mixin btnBg($color) {
   background: map.get($colors, $color) 0 0 no-repeat padding-box;
 }
@@ -124,4 +108,35 @@
   }
 }
 
-;
+@mixin bgImage(
+  $size,
+  $radius,
+  $top: null,
+  $right: null,
+  $left: null,
+  $bottom: null,
+  $rotate: null
+) {
+  border-radius: $radius;
+  content: "";
+  display: block;
+  height: $size;
+  @if ($left != null) {
+    left: $left;
+  }
+  @if $bottom != null {
+    bottom: $bottom;
+  }
+  @if $right != null {
+    right: $right;
+  }
+  position: absolute;
+  @if $top != null {
+    top: $top;
+  }
+  width: $size;
+  @if $rotate != null {
+    transform: rotate($rotate+deg);
+  }
+  transform: rotate(($rotate)+deg);
+}

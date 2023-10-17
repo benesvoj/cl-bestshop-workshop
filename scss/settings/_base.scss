@@ -14,7 +14,7 @@ body {
   }
 
   h2 {
-    @include font($family: raleway, $size: 2.25em, $lineHeight: 2.625rem);
+    @include font($family: raleway, $size: 2.25em, $lineHeight: 2.625rem, $weight: normal);
   }
 
   h3 {

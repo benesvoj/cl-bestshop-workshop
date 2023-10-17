@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:list';
 
 .pricing {
   @include section($pt: 6.25em, $pb: 5.625em);
@@ -73,20 +74,18 @@
     @include font($size: 2.875em, $weight: light);
   }
 
-  &--red, &--green {
-    padding: 1.875rem 7rem 3.75rem 7rem;
-  }
+  @for $i from 1 through length($colorsPalette) {
+    &:nth-child(#{$i}) {
+      border: 1px solid nth($colorsPalette, $i);
 
-  &--red {
-    @include pricingBoxTheme(redish);
-  }
-
-  &--blue {
-    @include pricingBoxTheme(primary);
-    padding: 1.875rem 7.5rem 5rem 7.5rem;
-  }
-
-  &--green {
-    @include pricingBoxTheme(green);
+      .pricing-box__price {
+        color: nth($colorsPalette, $i);
+      }
+    }
+    @if (calc($i / 2) == 0) {
+      padding: 1.875rem 7.5rem 5rem 7.5rem;
+    } @else {
+      padding: 1.875rem 7rem 3.75rem 7rem;
+    }
   }
 }
