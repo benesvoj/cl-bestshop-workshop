@@ -7,6 +7,7 @@ html {
 body {
   @include font($family: open-sans);
   background-color: map.get($colors, white);
+  font-weight: map.get($fontWeights, normal);
 
   h1 {
     @include font($family: raleway, $size: 3.0625em, $lineHeight: 3.5625rem);

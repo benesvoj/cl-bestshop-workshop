@@ -32,8 +32,9 @@
       padding-top: 14px;
     }
 
-    &_description {
-      @include font($color: grey, $family: raleway, $size: 17px, $lineHeight: 20px);
+    &__description {
+      @include font($family: raleway, $color: grey, $size: 1em, $lineHeight: 1.25em);
+      width: 7.5em;
     }
 
     &__circle {

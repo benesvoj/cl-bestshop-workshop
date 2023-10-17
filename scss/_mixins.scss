@@ -61,21 +61,33 @@
 }
 
 @mixin font(
-  $family: map.get($fonts, open-sans),
-  $color: map.get($colors, black),
+  $family: null,
+  $color: null,
   $size: null,
-  $weight: map.get($fontWeights, base),
+  $weight: null,
   $lineHeight: null,
   $spacing: null,
   $transform: null,
   $align: null
 ) {
-  font-family: map.get($fonts, $family);
-  color: map.get($colors, $color);
+  @if $family != null {
+    font-family: map.get($fonts, $family);
+  } @else {
+    font-family: map.get($fonts, open-sans);
+  }
+  @if $color != null {
+    color: map.get($colors, $color);
+  } @else {
+    color: map.get($colors, black);
+  }
   @if $size != null {
     font-size: $size;
   }
-  font-weight: map.get($fontWeights, $weight);
+  @if $weight != null {
+    font-weight: map.get($fontWeights, $weight);
+  } @else {
+    font-weight: map.get($fontWeights, base);
+  }
   @if $lineHeight != null {
     line-height: $lineHeight;
   }
