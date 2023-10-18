@@ -61,33 +61,21 @@
 }
 
 @mixin font(
-  $family: null,
-  $color: null,
+  $family: map.get($fonts, open-sans),
+  $color: map.get($colors, black),
   $size: null,
-  $weight: null,
+  $weight: map.get($fontWeights, base),
   $lineHeight: null,
   $spacing: null,
-  $transform: null,
+  $transform: none,
   $align: null
 ) {
-  @if $family != null {
-    font-family: map.get($fonts, $family);
-  } @else {
-    font-family: map.get($fonts, open-sans);
-  }
-  @if $color != null {
-    color: map.get($colors, $color);
-  } @else {
-    color: map.get($colors, black);
-  }
+  font-family: map.get($fonts, $family);
+  color: map.get($colors, $color);
   @if $size != null {
     font-size: $size;
   }
-  @if $weight != null {
-    font-weight: map.get($fontWeights, $weight);
-  } @else {
-    font-weight: map.get($fontWeights, base);
-  }
+  font-weight: map.get($fontWeights, $weight);
   @if $lineHeight != null {
     line-height: $lineHeight;
   }
@@ -98,9 +86,7 @@
     text-align: $align;
   }
   text-decoration: none;
-  @if $transform != null {
-    text-transform: $transform;
-  }
+  text-transform: $transform;
 }
 
 @mixin section(
@@ -150,5 +136,4 @@
   @if $rotate != null {
     transform: rotate($rotate+deg);
   }
-  transform: rotate(($rotate)+deg);
 }

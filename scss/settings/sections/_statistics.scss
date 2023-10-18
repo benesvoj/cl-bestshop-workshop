@@ -2,7 +2,7 @@
 
 .statistic {
   @include flexBox($justify: center);
-  @include section($pt: 100px);
+  @include section($pt: 6.25em);
 
   &__wrapper {
     @include flexBox($direction: column, $wrap: nowrap,);
