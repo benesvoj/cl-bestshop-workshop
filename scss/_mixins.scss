@@ -1,5 +1,11 @@
 @use 'sass:map';
 
+@mixin mobile($maxWidth) {
+  @media screen and (max-width: $maxWidth) {
+    @content;
+  }
+}
+
 @mixin contactIcon($icon) {
   &::before {
     background-image: url($icon);

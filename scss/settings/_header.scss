@@ -9,28 +9,62 @@
     @include flexBox($justify: between, $wrap: nowrap, $align: center);
   }
 
-  &__navigation {
-    ol {
-      @include flexBox($gap: 5rem);
+  @media screen and (min-width: 1001px) {
+    &__navigation {
+      ol {
+        @include flexBox($gap: 5rem);
+      }
+
+      &__nav-item {
+        @include font(
+                $color: grey,
+                $size: 0.75em,
+                $weight: bold,
+                $spacing: 0.273333em,
+                $lineHeight: 1.25em,
+                $transform: uppercase
+        );
+        border-bottom: 0.25rem solid transparent;
+        padding: 1.5625rem 1em;
+
+        &:hover {
+          border-bottom: 0.25em solid map.get($colors, primary);
+          color: map.get($colors, black);
+        }
+      }
     }
+  }
+  @include mobile($mobile-max-width) {
+    &__navigation {
+      .header_nav {
+        display: none;
+      }
 
-    &__nav-item {
-      @include font(
-              $color: grey,
-              $size: 0.75em,
-              $weight: bold,
-              $spacing: 0.273333em,
-              $lineHeight: 1.25em,
-              $transform: uppercase
-      );
-      border-bottom: 0.25rem solid transparent;
-      padding: 1.5625rem 1em;
+      .nav {
+        &__btn {
 
-      &:hover {
-        border-bottom: 0.25em solid map.get($colors, primary);
-        color: map.get($colors, black);
+        }
+
+        &__icon {
+          display: none;
+
+          span {
+            background-color: map.get($colors, primary);
+            display: block;
+            height: 2px;
+            margin-bottom: 3px;
+            width: 1.25rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          @include mobile($mobile-max-width) {
+            display: block;
+          }
+        }
       }
     }
   }
 }
-

@@ -3,11 +3,11 @@
 .footer {
   background: map.get($colors, light-grey) 0 0 no-repeat padding-box;
   box-shadow: 0 -5px 40px map.get($colors, secondary-shadow);
-  height: 89px;
+  height: 5.5em;
 
   &__wrapper {
     @include flexBox($justify: between, $align: center);
-    padding: 20px 0 17px 0;
+    padding: 1.25em 0 1em 0;
 
     &__logo {
       @include flexBox($gap: 0.4375rem, $direction: column,);

@@ -7,6 +7,7 @@
 
   &__wrapper {
     @include flexBox($gap: 2.5rem, $direction: column);
+    align-content: center;
 
     @for $i from 1 through length($colorsPalette) {
       &__box:nth-child(#{$i}) {
@@ -17,19 +18,15 @@
 
         // trumpet section
         @if $i == 3 {
-          @include flexBox($gap: 3.75rem);
+          @include flexBox($gap: 3.75rem, $wrap: nowrap);
 
           & > div {
             margin-bottom: 0;
-            //max-width: 620px;
           }
 
-          // first column
           & > div:nth-child(1) {
-            //max-width: 620px;
-
             .benefits__text {
-              margin: 70px 35px;
+              margin: 4.375rem 2.1875rem;
             }
           }
         }
@@ -39,16 +36,16 @@
       @if $i == 1 {
         &__box:nth-child(#{$i}) {
           .benefits__image {
-            margin-bottom: 38px;
-            margin-right: 117px;
+            margin-bottom: 2.375rem;
+            margin-right: 7.3125rem;
 
             img {
               height: auto;
-              width: 386px;
+              width: 24.125rem;
             }
 
             &::before {
-              @include bgImage($size: 180px, $radius: 40px, $top: -40px, $right: 0, $rotate: 45);
+              @include bgImage($size: 11.25em, $radius: 2.5em, $top: -2.5em, $right: 0, $rotate: 45);
             }
           }
         }
@@ -60,20 +57,20 @@
           flex-direction: row-reverse;
 
           .benefits__text {
-            margin: 70px 20px 70px 0;
+            margin: 4.375rem 1.25rem 4.375rem 0;
           }
 
           .benefits__image {
-            margin-bottom: 20px;
-            margin-left: 50px;
+            margin-bottom: 1.25rem;
+            margin-left: 3.125rem;
 
             img {
               height: auto;
-              width: 426px;
+              width: 26.625rem;
             }
 
             &::before {
-              @include bgImage($size: 320px, $radius: 50%, $left: -20px, $top: 0);
+              @include bgImage($size: 20rem, $radius: 50%, $left: -1.25rem, $top: 0);
             }
           }
         }
@@ -86,8 +83,8 @@
 
         img {
           height: auto;
-          margin-top: 55px;
-          width: 295px;
+          margin-top: 3.4375rem;
+          width: 18.5rem;
         }
       }
     }
@@ -96,25 +93,25 @@
   &__box-one-column {
     @include flexBox($align: end, $wrap: nowrap, $justify: between, $grow: 2);
     background: map.get($colors, white) 0 0 no-repeat padding-box;
-    border: 1px solid map.get($colors, light-grayish-blue);
-    border-radius: 5px;
+    border: 0.0625rem solid map.get($colors, light-grayish-blue);
+    border-radius: 0.3125rem;
     margin: 0;
   }
 
   &__text {
     box-sizing: content-box;
-    margin: 90px 30px;
-    width: 416px;
+    margin: 5.625rem 1.875rem;
+    width: 26rem;
 
     p {
-      margin-top: 30px;
+      margin-top: 1.875rem;
     }
 
     &::after {
       content: "";
       display: block;
-      height: 0.25em;
-      margin-top: 50px;
+      height: 0.25rem;
+      margin-top: 3.125rem;
       width: 75%;
     }
   }

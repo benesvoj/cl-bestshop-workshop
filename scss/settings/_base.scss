@@ -34,6 +34,11 @@ body {
   .container {
     margin: 0 auto;
     width: 84.5rem;
+
+    @media screen and (max-width: 1352px) {
+      width: 100%;
+      padding: 0 0.9375em;
+    }
   }
 
   ol, ul {
