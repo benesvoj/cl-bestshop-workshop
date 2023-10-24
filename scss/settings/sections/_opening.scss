@@ -1,6 +1,9 @@
 .opening {
   @include flexBox($direction: column, $wrap: nowrap);
   margin-top: 8.125em;
+  @include mobile($mobile-max-width) {
+    margin-top: 6.25em;
+  }
 
   &__wrapper {
     @include flexBox($direction: column, $align: center);
@@ -9,10 +12,18 @@
   &__title {
     @include font($size: 1em, $lineHeight: 1.375em);
     margin-bottom: 2.375em;
+    @include mobile($mobile-max-width) {
+      margin: 0 2.5em;
+      padding-bottom: 1.75rem;
+      text-align: center;
+    }
   }
 
   img {
     height: 100%;
     width: 100%;
+    @include mobile($mobile-max-width) {
+      padding-top: 3.125rem;
+    }
   }
 }

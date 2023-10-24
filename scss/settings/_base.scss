@@ -12,10 +12,17 @@ body {
   h1 {
     @include font($family: raleway, $size: 3.0625em, $lineHeight: 3.5625rem, $weight: base);
     padding-bottom: 1.25rem;
+    @include mobile ($mobile-max-width){
+      @include font($family: raleway, $size: 2.1875em, $lineHeight: 2.5625rem, $weight: base);
+      margin: 0 auto;
+    }
   }
 
   h2 {
     @include font($family: raleway, $size: 2.25em, $lineHeight: 2.625rem, $weight: base);
+    @include mobile($mobile-max-width) {
+      @include font($family: raleway, $size: 1.875em, $lineHeight: 2.1875rem, $weight: base);
+    }
   }
 
   h3 {
@@ -29,6 +36,9 @@ body {
 
   p {
     @include font($size: 1em, $lineHeight: 1.375em);
+    @include mobile($mobile-max-width) {
+      @include font($size: 0.875em, $lineHeight: 1.1875em);
+    }
   }
 
   .container {

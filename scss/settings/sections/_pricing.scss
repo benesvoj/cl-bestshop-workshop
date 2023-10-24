@@ -11,17 +11,27 @@
 
 .pricing-list {
   @include flexBox($gap: 3.75rem, $align: center,);
+  @include mobile($mobile-max-width) {
+    @include flexBox($direction: column, $gap: 3.75rem, $align: center, $justify: center);
+  }
 }
 
 .pricing-box {
   @include flexBox($direction: column, $align: center, $justify: around, $wrap: nowrap);
   border-radius: 1.125em;
   position: relative;
+  @include mobile($mobile-max-width) {
+    @include flexBox($direction: row, $grow: 1, $wrap: nowrap);
+    margin: 0 auto;
+  }
 
   &__header {
     @include flexBox($direction: column, $gap: 1.25rem,);
     margin-bottom: 3.75em;
     text-align: center;
+    @include mobile($mobile-max-width) {
+      margin-bottom: 0;
+    }
 
     .limited.pricing-box__price::after {
       @include font(
@@ -41,6 +51,9 @@
 
   ol {
     @include flexBox($direction: column, $align: center);
+    @include mobile($mobile-max-width) {
+      @include flexBox($direction: column, $align: start, $grow: 1);
+    }
   }
 
   .price-item {
@@ -84,8 +97,16 @@
     }
     @if (calc($i / 2) == 0) {
       padding: 1.875rem 7.5rem 5rem 7.5rem;
+      @include mobile($mobile-max-width) {
+        padding: 0;
+        width: 339px;
+      }
     } @else {
       padding: 1.875rem 7rem 3.75rem 7rem;
+      @include mobile($mobile-max-width) {
+        padding: 0;
+        width: 293px;
+      }
     }
   }
 }

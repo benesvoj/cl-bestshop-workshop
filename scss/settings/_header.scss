@@ -48,7 +48,7 @@
         &__icon {
           display: none;
 
-          span {
+          div {
             background-color: map.get($colors, primary);
             display: block;
             height: 2px;
