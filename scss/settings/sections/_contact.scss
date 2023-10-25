@@ -3,20 +3,20 @@
 .contact {
   @include section($pt: 5.625em, $pb: 3.75em);
 
-  @include mobile($mobile-max-width) {
+  @include mobile {
     @include section($pt: 1.625em, $pb: 2.75em, $pl: 1.875em, $pr: 1.875em);
   }
 
   &__wrapper {
     @include flexBox($gap: 6.25rem, $justify: center,);
-    @include mobile($mobile-max-width) {
+    @include mobile{
       @include flexBox($direction: column, $align: start, $gap: 3.25em);
     }
   }
 
   &__form {
     width: 27.5rem;
-    @include mobile($mobile-max-width) {
+    @include mobile {
       width: 100%;
     }
 
@@ -55,7 +55,7 @@
 
     &__title {
       @include font($family: raleway, $size: 3.0625em, $lineHeight: 3.5625rem);
-      @include mobile($mobile-max-width) {
+      @include mobile {
         @include font($size: 2.5em, $lineHeight: 1.175em);
       }
       margin-bottom: 1.375rem;
@@ -68,7 +68,7 @@
 
     &__contact-info {
       @include flexBox($gap: 1.25rem);
-      @include mobile($mobile-max-width) {
+      @include mobile {
         @include flexBox($direction: column, $align: start);
       }
     }

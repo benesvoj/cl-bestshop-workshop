@@ -4,7 +4,7 @@
   background: map.get($colors, light-grey) 0 0 no-repeat padding-box;
   box-shadow: 0 -5px 40px map.get($colors, secondary-shadow);
   height: 5.5em;
-  @include mobile($mobile-max-width) {
+  @include mobile {
     @include flexBox;
   }
 

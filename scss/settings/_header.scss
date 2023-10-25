@@ -34,7 +34,7 @@
       }
     }
   }
-  @include mobile($mobile-max-width) {
+  @include mobile {
     &__navigation {
       .header_nav {
         display: none;
@@ -60,7 +60,7 @@
             }
           }
 
-          @include mobile($mobile-max-width) {
+          @include mobile {
             display: block;
           }
         }

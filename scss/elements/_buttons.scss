@@ -23,7 +23,7 @@
 
   &--large {
     @include buttonProps(2.5rem, 1rem, 1.375rem, 9.8125rem);
-    @include mobile($mobile-max-width) {
+    @include mobile {
       @include buttonProps(40px, 16px, 22px, 92px, 22px);
     }
   }

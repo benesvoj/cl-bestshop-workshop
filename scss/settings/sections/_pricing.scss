@@ -3,7 +3,7 @@
 
 .pricing {
   @include section($pt: 6.25em, $pb: 5.625em);
-  @include mobile($mobile-max-width) {
+  @include mobile {
     @include section($pt: 3.75em, $pb: 1.625em);
   }
 
@@ -14,8 +14,9 @@
 
 .pricing-list {
   @include flexBox($gap: 3.75rem, $align: center,);
-  @include mobile($mobile-max-width) {
-    @include flexBox($direction: column, $gap: 3.75rem, $align: center, $justify: center);
+  @include mobile {
+    @include flexBox($direction: column, $gap: 3.375em, $align: center, $justify: center);
+    width: 100%;
   }
 }
 
@@ -23,16 +24,15 @@
   @include flexBox($direction: column, $align: center, $justify: around, $wrap: nowrap);
   border-radius: 1.125em;
   position: relative;
-  @include mobile($mobile-max-width) {
+  @include mobile {
     @include flexBox($direction: row, $grow: 1, $wrap: nowrap);
-    margin: 0 auto;
   }
 
   &__header {
     @include flexBox($direction: column, $gap: 1.25rem,);
     margin-bottom: 3.75em;
     text-align: center;
-    @include mobile($mobile-max-width) {
+    @include mobile {
       margin-bottom: 0;
     }
 
@@ -54,7 +54,7 @@
 
   ol {
     @include flexBox($direction: column, $align: center);
-    @include mobile($mobile-max-width) {
+    @include mobile {
       @include flexBox($direction: column, $align: start, $grow: 1);
     }
   }
@@ -93,22 +93,33 @@
   @for $i from 1 through length($colorsPalette) {
     &:nth-child(#{$i}) {
       border: 1px solid nth($colorsPalette, $i);
+      margin: 0 auto;
 
       .pricing-box__price {
         color: nth($colorsPalette, $i);
       }
-    }
-    @if (calc($i / 2) == 0) {
-      padding: 1.875rem 7.5rem 5rem 7.5rem;
-      @include mobile($mobile-max-width) {
-        padding: 0;
-        width: 339px;
-      }
-    } @else {
-      padding: 1.875rem 7rem 3.75rem 7rem;
-      @include mobile($mobile-max-width) {
-        padding: 0;
-        width: 293px;
+      @if $i % 2 == 0 {
+        padding: 1.875rem 7.5rem 5rem 7.5rem;
+        @include mobile {
+          padding: 51px 41px 51px 28px;
+          width: 100%;
+          gap: 28px;
+        }
+      } @else {
+        padding: 1.875rem 7rem 3.75rem 7rem;
+        @include mobile {
+          padding: 25px 0 51px 0;
+          @if $i == 1 {
+            padding-left: 45px;
+            padding-right: 11px;
+            gap: 43px;
+          } @else {
+            padding-left: 31px;
+            padding-right: 16px;
+            gap: 24px;
+          }
+          width: 90%;
+        }
       }
     }
   }

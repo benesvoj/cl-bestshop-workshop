@@ -3,7 +3,7 @@
 .statistic {
   @include flexBox($justify: center);
   @include section($pt: 6.25em);
-  @include mobile($mobile-max-width) {
+  @include mobile {
     @include section($pt: 3em, $pb: 3em);
   }
 
@@ -11,7 +11,7 @@
     @include flexBox($direction: column, $wrap: nowrap,);
     padding: 0 260px;
     text-align: center;
-    @include mobile($mobile-max-width) {
+    @include mobile {
       gap: 1.5em;
     }
   }
@@ -22,7 +22,7 @@
     padding-top: 100px;
     width: 100%;
 
-    @media screen and (max-width: $mobile-max-width) {
+    @include mobile {
       @include flexBox($direction: column, $wrap: nowrap,);
       padding-bottom: 0;
       padding-top: 0;
