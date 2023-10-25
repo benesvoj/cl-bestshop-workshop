@@ -3,122 +3,113 @@
 
 .pricing {
   @include section($pt: 6.25em, $pb: 5.625em);
+  @include flexBox($gap: 2.5rem, $direction: column, $wrap: nowrap, $align: center);
   @include mobile {
     @include section($pt: 3.75em, $pb: 1.625em);
   }
 
-  &__wrapper {
-    @include flexBox($gap: 2.5rem, $direction: column, $wrap: nowrap, $align: center);
-  }
-}
-
-.pricing-list {
-  @include flexBox($gap: 3.75rem, $align: center,);
-  @include mobile {
-    @include flexBox($direction: column, $gap: 3.375em, $align: center, $justify: center);
-    width: 100%;
-  }
-}
-
-.pricing-box {
-  @include flexBox($direction: column, $align: center, $justify: around, $wrap: nowrap);
-  border-radius: 1.125em;
-  position: relative;
-  @include mobile {
-    @include flexBox($direction: row, $grow: 1, $wrap: nowrap);
-  }
-
-  &__header {
-    @include flexBox($direction: column, $gap: 1.25rem,);
-    margin-bottom: 3.75em;
-    text-align: center;
+  &__list {
+    @include flexBox($gap: 3.75rem, $align: center,);
     @include mobile {
-      margin-bottom: 0;
-    }
-
-    .limited.pricing-box__price::after {
-      @include font(
-              $color: very-dark-blue,
-              $family: raleway,
-              $size: 0.75rem,
-              $weight: bolder
-      );
-      content: "Limited offer";
-      margin-top: 1.25rem;
+      @include flexBox($direction: column, $gap: 3.375em, $align: center);
+      width: 100%;
     }
   }
 
-  &__shadow {
-    box-shadow: 0.3125em 0.625em 1.6875em map.get($colors, primary-shadow);
-  }
+  &-box {
+    @include flexBox($direction: column, $align: center, $justify: around, $wrap: nowrap);
+    border-radius: 1.125em;
 
-  ol {
-    @include flexBox($direction: column, $align: center);
     @include mobile {
-      @include flexBox($direction: column, $align: start, $grow: 1);
+      @include flexBox($align: center, $justify: center, $wrap: wrap);
+      width: 370px;
     }
-  }
 
-  .price-item {
-    @include font($size: 0.875em, $lineHeight: 2.5625rem);
-
-    &::before {
-      $size: 0.6875rem;
-      content: "";
-      display: inline-block;
-      height: $size;
-      margin-right: 0.625rem;
-      width: $size;
-    }
-  }
-
-  .included {
-    @include itemIcon("/assets/icons/icon-checkmark-2.svg");
-  }
-
-  .excluded {
-    @include itemIcon("/assets/icons/icon-close.svg");
-  }
-
-  a {
-    bottom: -1.375rem;
-    position: absolute;
-  }
-
-  &__price {
-    @include flexBox($direction: column, $align: center);
-    @include font($size: 2.875em, $weight: light);
-  }
-
-  @for $i from 1 through length($colorsPalette) {
-    &:nth-child(#{$i}) {
-      border: 1px solid nth($colorsPalette, $i);
-      margin: 0 auto;
-
-      .pricing-box__price {
-        color: nth($colorsPalette, $i);
+    &__header {
+      @include flexBox($direction: column, $gap: 1.25rem,);
+      margin-bottom: 3.75em;
+      text-align: center;
+      @include mobile {
+        width: 50%;
+        margin-bottom: 0;
       }
-      @if $i % 2 == 0 {
-        padding: 1.875rem 7.5rem 5rem 7.5rem;
-        @include mobile {
-          padding: 51px 41px 51px 28px;
-          width: 100%;
-          gap: 28px;
+
+      .limited.pricing-box__price::after {
+        @include font(
+                $color: very-dark-blue,
+                $family: raleway,
+                $size: 0.75rem,
+                $weight: bolder
+        );
+        content: "Limited offer";
+        margin-top: 1.25rem;
+      }
+    }
+
+    &__shadow {
+      box-shadow: 0.3125em 0.625em 1.6875em map.get($colors, primary-shadow);
+    }
+
+    .price-items {
+      @include flexBox($direction: column, $align: center);
+      @include mobile {
+        @include flexBox($direction: column, $align: start);
+        width: 50%;
+      }
+    }
+
+    .price-item {
+      @include font($size: 0.875em, $lineHeight: 2.5625rem);
+
+      &::before {
+        $size: 0.6875rem;
+        content: "";
+        display: inline-block;
+        height: $size;
+        margin-right: 0.625rem;
+        width: $size;
+      }
+    }
+
+    .included {
+      @include itemIcon("/assets/icons/icon-checkmark-2.svg");
+    }
+
+    .excluded {
+      @include itemIcon("/assets/icons/icon-close.svg");
+    }
+
+    .btn {
+      bottom: -1.375rem;
+      position: relative;
+    }
+
+    &__price {
+      @include flexBox($direction: column, $align: center);
+      @include font($size: 2.875em, $weight: light);
+    }
+
+    @for $i from 1 through length($colorsPalette) {
+      &:nth-child(#{$i}) {
+        border: 1px solid nth($colorsPalette, $i);
+        margin: 0 auto;
+
+        .pricing-box__price {
+          color: nth($colorsPalette, $i);
         }
-      } @else {
-        padding: 1.875rem 7rem 3.75rem 7rem;
-        @include mobile {
-          padding: 25px 0 51px 0;
-          @if $i == 1 {
-            padding-left: 45px;
-            padding-right: 11px;
-            gap: 43px;
-          } @else {
-            padding-left: 31px;
-            padding-right: 16px;
-            gap: 24px;
+
+        @if $i % 2 == 0 {
+          padding: 1.875rem 7.5rem 5rem 7.5rem;
+          @include mobile {
+            width: 400px;
+            padding: 0;
           }
-          width: 90%;
+        } @else {
+          padding: 1.875rem 7rem 3.75rem 7rem;
+          @include mobile {
+            width: 370px;
+            padding: 0;
+          }
         }
       }
     }
