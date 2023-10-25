@@ -1,19 +1,14 @@
 @use 'sass:list';
 
 .statistic {
-  @include flexBox($justify: center);
+  @include flexBox($direction: column, $justify: center, $wrap: nowrap);
   @include section($pt: 6.25em);
+  padding: 0 260px;
+  text-align: center;
+
   @include mobile {
     @include section($pt: 3em, $pb: 3em);
-  }
-
-  &__wrapper {
-    @include flexBox($direction: column, $wrap: nowrap,);
-    padding: 0 260px;
-    text-align: center;
-    @include mobile {
-      gap: 1.5em;
-    }
+    gap: 1.5em;
   }
 
   &__list {
