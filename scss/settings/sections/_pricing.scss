@@ -3,6 +3,9 @@
 
 .pricing {
   @include section($pt: 6.25em, $pb: 5.625em);
+  @include mobile($mobile-max-width) {
+    @include section($pt: 3.75em, $pb: 1.625em);
+  }
 
   &__wrapper {
     @include flexBox($gap: 2.5rem, $direction: column, $wrap: nowrap, $align: center);

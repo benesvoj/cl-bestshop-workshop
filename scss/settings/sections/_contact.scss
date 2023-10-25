@@ -4,13 +4,13 @@
   @include section($pt: 5.625em, $pb: 3.75em);
 
   @include mobile($mobile-max-width) {
-    @include section($pt: 2.5em, $pb: 2.55em, $pl: 1.875em, $pr: 1.875em);
+    @include section($pt: 1.625em, $pb: 2.75em, $pl: 1.875em, $pr: 1.875em);
   }
 
   &__wrapper {
     @include flexBox($gap: 6.25rem, $justify: center,);
     @include mobile($mobile-max-width) {
-      @include flexBox($direction: column, $align: start);
+      @include flexBox($direction: column, $align: start, $gap: 3.25em);
     }
   }
 
