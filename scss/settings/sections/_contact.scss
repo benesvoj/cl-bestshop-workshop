@@ -42,6 +42,13 @@
       width: $size;
     }
   }
+  .email {
+    @include contactIcon("/assets/icons/icon-email.svg");
+  }
+
+  .phone {
+    @include contactIcon("/assets/icons/icon-phone.svg");
+  }
 
   &__text {
     @include flexBox($direction: column);
@@ -68,14 +75,6 @@
   }
 }
 
-
-.email {
-  @include contactIcon("/assets/icons/icon-email.svg");
-}
-
-.phone {
-  @include contactIcon("/assets/icons/icon-phone.svg");
-}
 
 .contact__form__label {
   @include font(
