@@ -102,7 +102,8 @@
   $pt: 0,
   $pr: 0,
   $pb: 0,
-  $pl: 0
+  $pl: 0,
+  $mt: 0
 ) {
   background: map.get($colors, $color) 0 0 no-repeat padding-box;
   @if ($paddingX != 0 or $paddingY != 0) {
@@ -110,6 +111,7 @@
   } @else {
     padding: $pt $pr $pb $pl;
   }
+  margin-top: $mt;
 }
 
 @mixin bgImage(

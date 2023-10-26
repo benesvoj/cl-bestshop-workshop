@@ -3,12 +3,11 @@
 .statistic {
   @include flexBox($direction: column, $justify: center, $wrap: nowrap);
 
-  @include section($pt: 6.25em);
-  margin-top: 6.25em;
+  @include section($pt: 6.25em, $mt: 6.25em);
   text-align: center;
 
   @include mobile {
-    @include section($pt: 3em, $pb: 3em);
+    @include section($mt: 50px);
     gap: 1.5em;
   }
 
@@ -21,8 +20,8 @@
     @include mobile {
       @include flexBox($direction: column, $wrap: nowrap,);
       gap: 1.5em;
-      padding-bottom: 0;
-      padding-top: 0;
+      margin: 35px auto 50px;
+      padding: 0;
     }
   }
 

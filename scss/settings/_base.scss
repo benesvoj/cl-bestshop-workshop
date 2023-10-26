@@ -45,13 +45,13 @@ body {
     margin: 0 auto;
     width: 84.5rem;
 
-    @media screen and (max-width: 1352px) {
-      width: 100%;
+    @media screen and (max-width: $laptop-max-width) {
       margin: 0 auto;
-    }
-    @include mobile{
       width: 100%;
+    }
+    @include mobile {
       padding: 0 15px;
+      width: 100%;
     }
   }
 
