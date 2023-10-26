@@ -2,8 +2,9 @@
 
 .statistic {
   @include flexBox($direction: column, $justify: center, $wrap: nowrap);
+
   @include section($pt: 6.25em);
-  padding: 0 260px;
+  margin-top: 6.25em;
   text-align: center;
 
   @include mobile {
@@ -12,16 +13,16 @@
   }
 
   &__list {
-    @include flexBox($justify: between, $wrap: nowrap,);
+    @include flexBox($justify: evenly, $wrap: nowrap,);
     padding-bottom: 120px;
     padding-top: 100px;
     width: 100%;
 
     @include mobile {
       @include flexBox($direction: column, $wrap: nowrap,);
+      gap: 1.5em;
       padding-bottom: 0;
       padding-top: 0;
-      gap: 1.5em;
     }
   }
 

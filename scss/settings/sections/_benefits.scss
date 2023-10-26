@@ -2,131 +2,129 @@
 @use 'sass:list';
 
 .benefits {
-  @include flexBox($justify: center);
-  @include section($color: light-grey, $paddingY: 6.25em, $paddingX: 15.6875em);
+  @include section($color: light-grey, $paddingY: 6.25em, $paddingX: 0);
+
   @include mobile {
     @include section($color: light-grey, $paddingY: 2.625em, $paddingX: 1.875em);
   }
 
   &__wrapper {
-    @include flexBox($gap: 2.5rem, $direction: column);
-    align-content: center;
+    @include flexBox($justify: center, $direction: column, $gap: 2.5em);
+    padding: 0 6.25em;
+  }
 
-    @for $i from 1 through length($colorsPalette) {
-      &__box:nth-child(#{$i}) {
-        .benefits__image::before,
-        .benefits__text::after {
-          background-color: nth($colorsPalette, $i);
-        }
-
-        // trumpet section
-        @if $i == 3 {
-          @include flexBox($gap: 3.75rem, $wrap: nowrap);
-
-          @include mobile {
-            @include flexBox($direction: column, $align: center, $justify: center, $gap: 0);
-          }
-
-          & > div {
-            margin-bottom: 0;
-          }
-
-          & > div:nth-child(1) {
-            .benefits__text {
-              margin: 4.375rem 2.1875rem;
-            }
-          }
-        }
+  @for $i from 1 through length($colorsPalette) {
+    &__box:nth-child(#{$i}) {
+      @include flexBox($align: end, $wrap: nowrap, $justify: between, $grow: 2);
+      background: map.get($colors, white) 0 0 no-repeat padding-box;
+      border: 0.0625rem solid map.get($colors, light-grayish-blue);
+      border-radius: 0.3125rem;
+      margin: 0;
+      @include mobile {
+        @include flexBox($direction: column-reverse, $wrap: wrap);
+        align-content: center;
+        padding: 1.375rem;
       }
 
-      // macbook section
-      @if $i == 1 {
-        &__box:nth-child(#{$i}) {
-          .benefits__image {
-            margin-bottom: 2.375rem;
-            margin-right: 7.3125rem;
-
-            img {
-              height: auto;
-              width: 24.125rem;
-              @include mobile {
-                width: 12rem;
-              }
-            }
-
-            &::before {
-              @include bgImage($size: 11.25em, $radius: 2.5em, $top: -2.5em, $right: 0, $rotate: 45);
-              @include mobile {
-                width: 8rem;
-                height: 8rem;
-                transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-              }
-            }
-          }
-        }
-      }
-
-      //iphone section
-      @if $i == 2 {
-        &__box:nth-child(#{$i}) {
-          flex-direction: row-reverse;
-          @include mobile {
-            flex-direction: column-reverse;
-          }
-
-          .benefits__text {
-            margin: 4.375rem 1.25rem 4.375rem 0;
-            @include mobile {
-              margin-top: 1.625rem;
-            }
-          }
-
-          .benefits__image {
-            margin-bottom: 1.25rem;
-            margin-left: 3.125rem;
-
-            img {
-              height: auto;
-              width: 26.625rem;
-              @include mobile {
-                width: 12rem;
-              }
-            }
-
-            &::before {
-              @include bgImage($size: 20rem, $radius: 50%, $left: -1.25rem, $top: 0);
-              @include mobile {
-                @include bgImage($size: 8.25rem, $radius: 50%, $left: -1.25rem, $top: 0);
-              }
-            }
-          }
-        }
-      }
-
-      .single-image {
+      .benefits__image::before,
+      .benefits__text::after {
         background-color: nth($colorsPalette, $i);
-        @include flexBox($align: center, $justify: center, $grow: 1);
-        border: none;
+      }
+    }
 
-        img {
-          height: auto;
-          margin-top: 3.4375rem;
-          width: 18.5rem;
+    // macbook section
+    @if $i == 1 {
+      &__box:nth-child(#{$i}) {
+        .benefits__image {
+          margin-bottom: 2.375rem;
+          margin-right: 7.3125rem;
+
+          img {
+            height: auto;
+            width: 24.125rem;
+            @include mobile {
+              width: 12rem;
+            }
+          }
+
+          &::before {
+            @include bgImage($size: 11.25em, $radius: 2.5em, $top: -2.5em, $right: 0, $rotate: 45);
+            @include mobile {
+              width: 8rem;
+              height: 8rem;
+              transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+            }
+          }
+        }
+      }
+    }
+
+    //iphone section
+    @if $i == 2 {
+      &__box:nth-child(#{$i}) {
+        flex-direction: row-reverse;
+        @include mobile {
+          flex-direction: column-reverse;
+        }
+
+        .benefits__text {
+          margin: 4.375rem 1.25rem 4.375rem 0;
+          @include mobile {
+            margin-top: 1.625rem;
+          }
+        }
+
+        .benefits__image {
+          margin-bottom: 1.25rem;
+          margin-left: 3.125rem;
+
+          img {
+            height: auto;
+            width: 26.625rem;
+            @include mobile {
+              width: 12rem;
+            }
+          }
+
+          &::before {
+            @include bgImage($size: 20rem, $radius: 50%, $left: -1.25rem, $top: 0);
+            @include mobile {
+              @include bgImage($size: 8.25rem, $radius: 50%, $left: -1.25rem, $top: 0);
+            }
+          }
         }
       }
     }
   }
 
-  &__box-one-column {
-    @include flexBox($align: end, $wrap: nowrap, $justify: between, $grow: 2);
-    background: map.get($colors, white) 0 0 no-repeat padding-box;
-    border: 0.0625rem solid map.get($colors, light-grayish-blue);
-    border-radius: 0.3125rem;
-    margin: 0;
+  &__two-columns {
+    @include flexBox($gap: 3.75em, $wrap: nowrap);
+
     @include mobile {
-      @include flexBox($direction: column-reverse, $wrap: wrap);
-      align-content: center;
-      padding: 1.375rem;
+      @include flexBox($direction: column, $align: center, $justify: center, $gap: 0);
+    }
+
+    & > .benefits__box {
+      .benefits__image::before {
+        display: none;
+      }
+
+      .benefits__text::after {
+        background-color: nth($colorsPalette, 3);
+      }
+    }
+
+    .single-image {
+      @include flexBox($align: center, $justify: center, $grow: 1);
+
+      background-color: nth($colorsPalette, 3);
+      border: none;
+
+      .benefits__image img {
+        height: auto;
+        margin-top: 3.4375rem;
+        width: 18.5rem;
+      }
     }
   }
 
