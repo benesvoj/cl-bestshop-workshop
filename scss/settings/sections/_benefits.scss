@@ -5,7 +5,7 @@
   @include section($color: light-grey, $paddingY: 6.25em, $paddingX: 0);
 
   @include mobile {
-    @include section($color: light-grey, $paddingY: 2.625em, $paddingX: 1.875em);
+    @include section($color: light-grey, $paddingY: 2.625em, $paddingX: 0.9375em);
   }
 
   &__wrapper {
@@ -15,15 +15,16 @@
 
   @for $i from 1 through length($colorsPalette) {
     &__box:nth-child(#{$i}) {
-      @include flexBox($align: end, $wrap: nowrap, $justify: between, $grow: 2);
+      @include flexBox($align: center, $wrap: nowrap, $justify: between, $grow: 2);
       background: map.get($colors, white) 0 0 no-repeat padding-box;
       border: 0.0625rem solid map.get($colors, light-grayish-blue);
       border-radius: 0.3125rem;
       margin: 0;
+
       @include mobile {
         @include flexBox($direction: column-reverse, $wrap: wrap);
         align-content: center;
-        padding: 1.375rem;
+        padding: 0 1.375em;
       }
 
       .benefits__image::before,
@@ -36,23 +37,27 @@
     @if $i == 1 {
       &__box:nth-child(#{$i}) {
         .benefits__image {
-          margin-bottom: 2.375rem;
-          margin-right: 7.3125rem;
+          margin-top: 40px;
 
           img {
             height: auto;
             width: 24.125rem;
             @include mobile {
               width: 12rem;
+              position: relative;
+              z-index: 2;
             }
           }
 
           &::before {
             @include bgImage($size: 11.25em, $radius: 2.5em, $top: -2.5em, $right: 0, $rotate: 45);
             @include mobile {
-              width: 8rem;
-              height: 8rem;
-              transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+              width: 5.625rem;
+              height: 5.625rem;
+              position: absolute;
+              display: block;
+              top: -15px;
+              right: -10px;
             }
           }
         }
@@ -68,28 +73,30 @@
         }
 
         .benefits__text {
-          margin: 4.375rem 1.25rem 4.375rem 0;
+          margin: 1.875em 1.25em 4.375em 0;
           @include mobile {
-            margin-top: 1.625rem;
+            margin: 1.875em 0;
           }
         }
 
         .benefits__image {
-          margin-bottom: 1.25rem;
-          margin-left: 3.125rem;
+          margin-top: 30px;
+          position: relative;
 
           img {
             height: auto;
             width: 26.625rem;
             @include mobile {
               width: 12rem;
+              position: relative;
+              z-index: 2;
             }
           }
 
           &::before {
             @include bgImage($size: 20rem, $radius: 50%, $left: -1.25rem, $top: 0);
             @include mobile {
-              @include bgImage($size: 8.25rem, $radius: 50%, $left: -1.25rem, $top: 0);
+              @include bgImage($size: 8.25rem, $radius: 50%, $left: -0.25rem, $top: -15px);
             }
           }
         }
@@ -134,7 +141,7 @@
     width: 26rem;
 
     @include mobile {
-      margin: 0 1.875rem;
+      margin: 1.875rem 0;
       width: 100%;
     }
 
