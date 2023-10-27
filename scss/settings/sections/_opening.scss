@@ -27,7 +27,10 @@
     @include mobile {
       padding-top: 3.125rem;
       width: 200%;
+      height: auto;
       transform: translateX(-25%);
+      position: absolute;
+      bottom: 0;
     }
   }
 }
