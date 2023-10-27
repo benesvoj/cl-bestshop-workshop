@@ -3,6 +3,7 @@
 
 .benefits {
   @include section($color: light-grey, $paddingY: 6.25em, $paddingX: 0);
+  margin: 3.125em 0;
 
   @include mobile {
     @include section($color: light-grey, $paddingY: 2.625em, $paddingX: 0.9375em);
@@ -126,6 +127,10 @@
 
       background-color: nth($colorsPalette, 3);
       border: none;
+
+      @include mobile {
+        width: 100%;
+      }
 
       .benefits__image img {
         height: auto;
