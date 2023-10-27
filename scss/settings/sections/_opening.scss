@@ -24,6 +24,8 @@
     width: 100%;
     @include mobile {
       padding-top: 3.125rem;
+      width: 200%;
+      transform: translateX(-25%);
     }
   }
 }
