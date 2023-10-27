@@ -2,8 +2,8 @@
   @include flexBox($direction: column, $wrap: nowrap);
   margin-top: 8.125em;
   @include mobile {
-    margin-top: 6.25em;
     height: calc(100vh - 6.25em);
+    margin-top: 6.25em;
   }
 
   &__wrapper {
@@ -20,20 +20,23 @@
     }
   }
 
-  &__image {
-    position: absolute;
-    bottom: 0;
-    overflow: hidden;
+  @include mobile {
+    &__image {
+      bottom: 0;
+      overflow: hidden;
+      position: absolute;
+    }
   }
+
   img {
     height: 100%;
     width: 100%;
     @include mobile {
-      padding-top: 3.125rem;
-      width: 200%;
       height: auto;
-      transform: translateX(-25%);
+      padding-top: 3.125rem;
       position: relative;
+      transform: translateX(-25%);
+      width: 200%;
     }
   }
 }
