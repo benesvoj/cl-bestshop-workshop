@@ -5,7 +5,14 @@
   @include section($pt: 6.25em, $pb: 5.625em);
   @include flexBox($gap: 2.5rem, $direction: column, $wrap: nowrap, $align: center);
   @include mobile {
-    @include section($pt: 3.75em, $pb: 1.625em);
+    @include section($mt: 3.125em, $mb: 3.125em);
+  }
+
+  &__wrapper {
+    @include flexBox($gap: 2.5rem, $direction: column, $wrap: nowrap, $align: center);
+    @include mobile {
+      @include flexBox($direction: column, $gap: .875em, $align: center);
+    }
   }
 
   &__list {
@@ -30,8 +37,8 @@
       margin-bottom: 3.75em;
       text-align: center;
       @include mobile {
-        width: 50%;
         margin-bottom: 0;
+        width: 50%;
       }
 
       .limited.pricing-box__price::after {
@@ -101,13 +108,13 @@
         @if $i % 2 == 0 {
           padding: 1.875rem 7.5rem 5rem 7.5rem;
           @include mobile {
-            width: 400px;
+            width: fit-content;
             padding: 51px 0 0 0;
           }
         } @else {
           padding: 1.875rem 7rem 3.75rem 7rem;
           @include mobile {
-            width: 370px;
+            width: fit-content;
             padding: 25px 0 0 0;
           }
         }

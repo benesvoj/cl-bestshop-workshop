@@ -9,40 +9,42 @@
     @include flexBox($justify: between, $wrap: nowrap, $align: center);
   }
 
-  @media screen and (min-width: 1001px) {
-    &__navigation {
-      ol {
-        @include flexBox($gap: 5rem);
-      }
-
-      &__nav-item {
-        @include font(
-                $color: grey,
-                $size: 0.75em,
-                $weight: bold,
-                $spacing: 0.273333em,
-                $lineHeight: 1.25em,
-                $transform: uppercase
-        );
-        border-bottom: 0.25rem solid transparent;
-        padding: 1.5625rem 1em;
-
-        &:hover {
-          border-bottom: 0.25em solid map.get($colors, primary);
-          color: map.get($colors, black);
-        }
-      }
+  &__navigation {
+    .header_nav {
+      @include flexBox($gap: 5rem);
     }
-  }
-  @include mobile {
-    &__navigation {
+
+    @include mobile {
       .header_nav {
+        background-color: map.get($colors, white);
         display: none;
+        flex-direction: column;
+        gap: 14px;
+        left: 0;
+        padding-bottom: 20px;
+        position: absolute;
+        top: 95px;
+        width: 100%;
       }
-
       .nav {
-        &__btn {
+        &__btn:checked ~ .header_nav {
+          display: flex;
+        }
 
+        &__btn:checked ~ .nav__icon {
+          span {
+            &:nth-child(1) {
+              transform: rotate(45deg) translate(2px, 5px);
+            }
+
+            &:nth-child(2) {
+              opacity: 0;
+            }
+
+            &:nth-child(3) {
+              transform: rotate(-45deg) translate(2px, -5px);
+            }
+          }
         }
 
         &__icon {
@@ -63,6 +65,31 @@
           @include mobile {
             display: block;
           }
+        }
+      }
+    }
+
+    &__nav-item {
+      @include font(
+              $color: grey,
+              $size: 0.75em,
+              $weight: bold,
+              $spacing: 0.273333em,
+              $lineHeight: 1.25em,
+              $transform: uppercase
+      );
+      border-bottom: 0.25rem solid transparent;
+      padding: 1.5625rem 1rem;
+
+      @include mobile {
+        padding: 0 1.5rem;
+      }
+
+      &:hover {
+        border-bottom: 0.25em solid map.get($colors, primary);
+        color: map.get($colors, black);
+        @include mobile {
+          border-bottom: none;
         }
       }
     }
