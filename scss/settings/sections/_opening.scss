@@ -1,10 +1,9 @@
 .opening {
   @include flexBox($direction: column, $wrap: nowrap);
   margin-top: 8.125em;
-  overflow: hidden;
   @include mobile {
     margin-top: 6.25em;
-    height: 100vh;
+    height: calc(100vh - 6.25em);
   }
 
   &__wrapper {
@@ -21,6 +20,11 @@
     }
   }
 
+  &__image {
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+  }
   img {
     height: 100%;
     width: 100%;
@@ -29,8 +33,7 @@
       width: 200%;
       height: auto;
       transform: translateX(-25%);
-      position: absolute;
-      bottom: 0;
+      position: relative;
     }
   }
 }

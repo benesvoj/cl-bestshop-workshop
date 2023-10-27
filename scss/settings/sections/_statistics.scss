@@ -7,7 +7,7 @@
   text-align: center;
 
   @include mobile {
-    @include section($mt: 50px);
+    @include section($mt: 0);
     gap: 1.5em;
   }
 
