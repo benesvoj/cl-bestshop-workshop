@@ -1,8 +1,10 @@
 .opening {
   @include flexBox($direction: column, $wrap: nowrap);
   margin-top: 8.125em;
+  overflow: hidden;
   @include mobile {
     margin-top: 6.25em;
+    height: 100vh;
   }
 
   &__wrapper {
